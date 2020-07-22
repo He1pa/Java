@@ -12,11 +12,11 @@
 
   
 
-**封装**
+### 封装
 
 封装是指把一个对象的状态信息（也就是属性）隐藏在对象内部，不允许外部对象直接访问对象的内部信息。但是可以提供一些可以被外界访问的方法来操作属性。就好像我们看不到挂在墙上的空调的内部的零件信息（也就是属性），但是可以通过遥控器（方法）来控制空调。
 
-**继承**
+### 继承
 
 不同类型的对象，相互之间经常有一定数量的共同点。例如，小明同学、小红同学、小李同学，都共享学生的特性（班级、学号等）。同时，每一个对象还定义了额外的特性使得他们与众不同。例如小明的数学比较好，小红的性格惹人喜爱；小李的力气比较大。继承是使用已存在的类的定义作为基础建立新类的技术，新类的定义可以增加新的数据或新的功能，也可以用父类的功能，但不能选择性地继承父类。通过使用继承，可以快速地创建新的类，可以提高代码的重用，程序的可维护性，节省大量创建新类的时间 ，提高我们的开发效率。
 
@@ -30,11 +30,9 @@
 
  
 
-**多态**
+### 多态
 
 多态，顾名思义，表示一个对象具有多种的状态。具体表现为父类的引用指向子类的实例。
-
- 
 
 多态的特点:
 
@@ -102,23 +100,21 @@
 
 在 Java 中，所有的异常都有一个共同的祖先 java.lang 包中的 Throwable 类。Throwable： 有两个重要的子类：Exception（异常） 和 Error（错误） ，二者都是 Java 异常处理的重要子类，各自都包含大量子类。
 
- 
+### Error（错误）
 
-**Error（错误）:是程序无法处理的错误，表示运行应用程序中较严重问题**。大多数错误与代码编写者执行的操作无关，而表示代码运行时 JVM（Java 虚拟机）出现的问题。例如，Java 虚拟机运行错误（Virtual MachineError），当 JVM 不再有继续执行操作所需的内存资源时，将出现 OutOfMemoryError。这些异常发生时，Java 虚拟机（JVM）一般会选择线程终止。
+**是程序无法处理的错误，表示运行应用程序中较严重问题**。大多数错误与代码编写者执行的操作无关，而表示代码运行时 JVM（Java 虚拟机）出现的问题。例如，Java 虚拟机运行错误（Virtual MachineError），当 JVM 不再有继续执行操作所需的内存资源时，将出现 OutOfMemoryError。这些异常发生时，Java 虚拟机（JVM）一般会选择线程终止。
 
  
 
 这些错误表示故障发生于虚拟机自身、或者发生在虚拟机试图执行应用时，如 Java 虚拟机运行错误（Virtual MachineError）、类定义错误（NoClassDefFoundError）等。这些错误是不可查的，因为它们在应用程序的控制和处理能力之 外，而且绝大多数是程序运行时不允许出现的状况。对于设计合理的应用程序来说，即使确实发生了错误，本质上也不应该试图去处理它所引起的异常状况。在 Java 中，错误通过 Error 的子类描述。
 
- 
+ ### Exception（异常）
 
-**Exception（异常）:是程序本身可以处理的异常**。Exception 类有一个重要的子类 RuntimeException。RuntimeException 异常由 Java 虚拟机抛出。NullPointerException（要访问的变量没有引用任何对象时，抛出该异常）、ArithmeticException（算术运算异常，一个整数除以 0 时，抛出该异常）和 ArrayIndexOutOfBoundsException （下标越界异常）。
-
- 
+**是程序本身可以处理的异常**。Exception 类有一个重要的子类 RuntimeException。RuntimeException 异常由 Java 虚拟机抛出。NullPointerException（要访问的变量没有引用任何对象时，抛出该异常）、ArithmeticException（算术运算异常，一个整数除以 0 时，抛出该异常）和 ArrayIndexOutOfBoundsException （下标越界异常）。
 
 **注意：异常和错误的区别：异常能被程序本身处理，错误是无法处理。**
 
-**try-catch-finally**
+### try-catch-finally
 
 try 块： 用于捕获异常。其后可接零个或多个 catch 块，如果没有 catch 块，则必须跟一个 finally 块。
 
@@ -190,11 +186,25 @@ String str = （String）o;
 
 ## 1.7 反射
 
-Reflection是Java被视为动态语言的关键，反射机制允许程序在执行期间借助Reflection API取得任何类的内部信息，并直接操作任意对象的内部属性及方法。
+JAVA 反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为 java 语言的反射机制。
 
-优点：可以实现对台创建对象和编译，体现出强大的灵活性。
+### 静态编译和动态编译
 
-缺点：对性能有影响。使用反射基本上是一种解释操作，慢于直接执行相同的操作。
+- **静态编译：**在编译时确定类型，绑定对象
+- **动态编译：**运行时确定类型，绑定对象
+
+### 反射机制优缺点
+
+- **优点：** 运行期类型的判断，动态加载类，提高代码灵活度。
+- **缺点：** 性能瓶颈：反射相当于一系列解释操作，通知 JVM 要做的事情，性能比直接的 java 代码要慢很多。
+
+### 反射的应用场景
+
+**反射是框架设计的灵魂。**
+
+在我们平时的项目开发过程中，基本上很少会直接使用到反射机制，但这不能说明反射机制没有用，实际上有很多设计、开发都与反射机制有关，例如模块化的开发，通过反射去调用对应的字节码；动态代理设计模式也采用了反射机制，还有我们日常使用的 Spring／Hibernate 等框架也大量使用到了反射机制。
+
+举例：① 我们在使用 JDBC 连接数据库时使用 `Class.forName()`通过反射加载数据库的驱动程序；②Spring 框架也用到很多反射机制，最经典的就是 xml 的配置模式。Spring 通过 XML 配置模式装载 Bean 的过程：1) 将程序内所有 XML 或 Properties 配置文件加载入内存中; 2)Java 类里面解析 xml 或 properties 里面的内容，得到对应实体类的字节码字符串以及相关的属性信息; 3)使用反射机制，根据这个字符串获得某个类的 Class 实例; 4)动态配置实例的属性
 
 ## 1.8 注解
 
@@ -232,9 +242,46 @@ Inherited：说明子类可以继承父类中的该注解
 
 ## 1.9 I/O
 
-## 1.10 集合
+IO流分类：
 
-## 1.11枚举
+- 按照流的流向分，可以分为输入流和输出流；
+
+- 按照操作单元划分，可以划分为字节流和字符流；
+
+- 按照流的功能划分为节点流和处理流。
+
+  |        |   字节流    | 字符流 |
+  | :----: | :---------: | :----: |
+  | 输入流 | InputStream | Reader |
+  | 输出流 | OutputSream | Writer |
+
+  节点流类型
+
+  |     类型      | 字符流                               | 字节流                                         |
+  | :-----------: | ------------------------------------ | ---------------------------------------------- |
+  |     File      | FileReader<br />FileWriter           | FileInputStream <br />FileOutputSream          |
+  | Memory Array  | CharArrayReader<br />CharArrayWriter | ByteArrayInputStream<br />ByteArrayOutputSream |
+  | Memory String | StringReader<br />StringWriter       |                                                |
+  |     Pipe      | PipedReader<br />PipedWriter         | PipedInputStream<br />PipedOutStream           |
+
+  处理流类型
+
+  | 处理类型                               | 字符流                                    | 字节流                                        |
+  | -------------------------------------- | ----------------------------------------- | --------------------------------------------- |
+  | Buffering                              | BufferedReader<br />BufferedWriter        | BufferedInputStream<br />BufferedOutputStream |
+  | Filtering                              | FilterReader<br />FilterWriter            | FilterInputStream<br />FilterOutputStream     |
+  | Converting between bytes and character | InputStreamReader<br />OutputStreamWriter |                                               |
+  | Object Serialization                   |                                           | ObjectInputStream<br />ObjectOutputStream     |
+  | Data conversion                        |                                           | DataInputStream<br />DataOutputStream         |
+  | Counting                               | LineNumberReader                          | LineNumberInputStream                         |
+  | Peeking ahead                          | PushbackReader                            | PushbackInputStream                           |
+  | Printing                               | PrintWriter                               | PrintStream                                   |
+
+  **BIO NIO AIO**
+
+  
+
+## 1.10枚举
 
 使用枚举会有更强的类型约束，编译器帮助检查入参类型，规避风险
 
