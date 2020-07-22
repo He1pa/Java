@@ -9,7 +9,7 @@ public class Doc {
      * @return
      */
 
-    public String test(String name) throws {
+    public String test(String name)   {
         return name;
     }
 }
