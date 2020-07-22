@@ -151,5 +151,145 @@ type varName [=value] [{,varName[=value]}];
 + 条件运算符 ？：
 + 扩展赋值运算符 += -= *= /=
 
+# 2 控制流程
 
+## 2.1 Scanner与用户交互
 
+Scanner对象：
+
++ next（）
+  + 一定要读取到有效字符后才可以结束输入
+  + 对输入有效字符之前遇到的空白会自动去掉
+  + 只有输入有效字符后才将其后面输入的空白作为分隔符或结束符
+  + **next（）不能得到带有空格的字符串**
++ nextLine（）
+  + 以Enter作为结束符，也就是说nextLine()方法返回的是输入回车前的所有字符
+  + 可以得到空白
+
+## 2.2 顺序结构
+
+## 2.3 选择结构
+
+单选择：if（）{}
+
+```java
+if(){
+
+}
+```
+
+双选择：
+
+```java
+if(){
+
+}else{
+    
+}
+```
+
+多选择：
+
+```java
+if(){
+
+}else if(){
+
+}else{
+
+}
+```
+
+嵌套的if
+
+```java
+if(){
+	if(){
+	
+	}
+}
+```
+
+switch
+
+```java
+switch(){
+case value:
+...
+break;
+case value:
+...
+break;
+..........
+case value:
+...
+break;
+default:
+}
+```
+
+switch语句中的变量类型可以是
+
++ byte short int char
++ 从JDK7 开始 开始支持String ，同时case标签必须是字符串常量或字面量
+
+## 2.4 循环结构
+
++ while
+
+  ```java
+  while(){
+  //循环内容
+  }
+  ```
+
+  
+
++ do...while
+
+  ```java
+  do{
+  //循环内容
+  }while();
+  ```
+
+  对于while语句而言，如果不满足条件，则不进入循环
+
+  do...while循环和while循环相似，不同的是do...while至少会执行一次
+
+  while先判断再执行，do...while先执行再判断
+
++ for
+
+  ```java
+  for(初始化;布尔表达式;更新){
+  	//代码语句	
+  }
+  ```
+
+  IDEA快捷键  100.for   等于
+
+  ```java
+  for(int i = 0;i < 100;i++){
+  
+  }
+  ```
+
+  
+
++ JDK5中加入了用于数组的增强型for循环
+
+  ```java
+  int[] numbers={10,20,30};
+  for(int i:numbers){
+  
+  }
+  ```
+
+  
+
+## 2.5 break continue goto
+
++ break再任何循环语句的主体部分，均可用break控制循环的流程。break用于强行退出循环，不执行循环中剩余的语句。（在switch也可用）
++ continue 语句用在循环语句体中，用于中止某次循环过程，即跳过循环体中未执行的语句，接着进行下一次是否循环的判定
++ goto未正式使用
