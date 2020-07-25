@@ -134,6 +134,7 @@
       <workItem from="1595423159068" duration="5900000" />
       <workItem from="1595477127588" duration="20348000" />
       <workItem from="1595563980276" duration="15582000" />
+      <workItem from="1595664965274" duration="682000" />
     </task>
     <servers />
   </component>
@@ -161,6 +162,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1379" y="447" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1595392366428" />
+    <state x="1074" y="230" key="FileChooserDialogImpl" timestamp="1595665728416">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1074" y="230" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595665728415" />
     <state width="875" height="265" key="GridCell.Tab.0.bottom" timestamp="1595664614176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -185,6 +190,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1260" y="427" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1595651011648" />
+    <state x="669" y="99" key="new project wizard" timestamp="1595665730601">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="99" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1595665730601" />
     <state x="1175" y="262" key="run.anything.popup" timestamp="1595482953452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
