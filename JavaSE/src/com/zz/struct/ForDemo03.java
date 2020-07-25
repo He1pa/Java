@@ -11,7 +11,7 @@ public class ForDemo03 {
             }
             if(j == 3){
                 System.out.println();
-                j=0;
+                j = 0;
             }
 
         }

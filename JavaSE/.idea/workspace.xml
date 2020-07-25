@@ -10,6 +10,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -20,6 +22,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -29,13 +35,13 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Java" />
   </component>
-  <component name="RunManager" selected="Application.Demo01">
-    <configuration name="Demo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zz.operator.Demo01" />
+  <component name="RunManager" selected="Application.SimpleDateFormatTest">
+    <configuration name="Demo02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.string.Demo02" />
       <module name="JavaSE" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zz.operator.*" />
+          <option name="PATTERN" value="com.string.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -43,12 +49,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo04" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zz.operator.Demo04" />
+    <configuration name="Demo03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.string.Demo03" />
       <module name="JavaSE" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zz.operator.*" />
+          <option name="PATTERN" value="com.string.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -56,12 +62,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo05" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zz.operator.Demo05" />
+    <configuration name="SimpleDateFormatTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.date.SimpleDateFormatTest" />
       <module name="JavaSE" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zz.operator.*" />
+          <option name="PATTERN" value="com.date.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -69,12 +75,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo07" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zz.operator.Demo07" />
+    <configuration name="StringMethodTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.string.StringMethodTest" />
       <module name="JavaSE" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zz.operator.*" />
+          <option name="PATTERN" value="com.string.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,12 +88,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo08" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zz.operator.Demo08" />
+    <configuration name="StringStringBufferStringBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.string.StringStringBufferStringBuilder" />
       <module name="JavaSE" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zz.operator.*" />
+          <option name="PATTERN" value="com.string.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,19 +102,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Demo04" />
-      <item itemvalue="Application.Demo05" />
-      <item itemvalue="Application.Demo07" />
-      <item itemvalue="Application.Demo08" />
-      <item itemvalue="Application.Demo01" />
+      <item itemvalue="Application.Demo02" />
+      <item itemvalue="Application.Demo03" />
+      <item itemvalue="Application.StringMethodTest" />
+      <item itemvalue="Application.StringStringBufferStringBuilder" />
+      <item itemvalue="Application.SimpleDateFormatTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Demo01" />
-        <item itemvalue="Application.Demo08" />
-        <item itemvalue="Application.Demo07" />
-        <item itemvalue="Application.Demo05" />
-        <item itemvalue="Application.Demo04" />
+        <item itemvalue="Application.SimpleDateFormatTest" />
+        <item itemvalue="Application.StringStringBufferStringBuilder" />
+        <item itemvalue="Application.StringMethodTest" />
+        <item itemvalue="Application.Demo03" />
+        <item itemvalue="Application.Demo02" />
       </list>
     </recent_temporary>
   </component>
@@ -124,6 +130,10 @@
       <updated>1595339660120</updated>
       <workItem from="1595339665030" duration="122000" />
       <workItem from="1595339915323" duration="10953000" />
+      <workItem from="1595397027680" duration="9543000" />
+      <workItem from="1595423159068" duration="5900000" />
+      <workItem from="1595477127588" duration="20348000" />
+      <workItem from="1595563980276" duration="15582000" />
     </task>
     <servers />
   </component>
@@ -131,10 +141,18 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1448" y="109" key="#Auto_Import" timestamp="1595398556019">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1448" y="109" key="#Auto_Import/0.0.1920.1040@0.0.1920.1040" timestamp="1595398556019" />
     <state x="798" y="240" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595343525809">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="798" y="240" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595343525809" />
+    <state x="1480" y="333" key="#com.intellij.ide.util.MemberChooser" timestamp="1595499711622">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1480" y="333" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595499711622" />
     <state x="1073" y="374" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595343515669">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -143,29 +161,37 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1379" y="447" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1595392366428" />
-    <state width="1340" height="266" key="GridCell.Tab.0.bottom" timestamp="1595396141577">
+    <state width="875" height="265" key="GridCell.Tab.0.bottom" timestamp="1595664614176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595396141577" />
-    <state width="1340" height="266" key="GridCell.Tab.0.center" timestamp="1595396141577">
+    <state width="875" height="265" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595664614176" />
+    <state width="875" height="265" key="GridCell.Tab.0.center" timestamp="1595664614176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595396141577" />
-    <state width="1340" height="266" key="GridCell.Tab.0.left" timestamp="1595396141577">
+    <state width="875" height="265" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595664614176" />
+    <state width="875" height="265" key="GridCell.Tab.0.left" timestamp="1595664614176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595396141577" />
-    <state width="1340" height="266" key="GridCell.Tab.0.right" timestamp="1595396141577">
+    <state width="875" height="265" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595664614176" />
+    <state width="875" height="265" key="GridCell.Tab.0.right" timestamp="1595664614176">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1340" height="266" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595396141577" />
+    <state width="875" height="265" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595664614176" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1595343089214">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595343089214" />
-    <state x="1113" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1595346673639">
+    <state x="1260" y="427" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1595651011648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1113" y="219" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595346673639" />
+    <state x="1260" y="427" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1595651011648" />
+    <state x="1175" y="262" key="run.anything.popup" timestamp="1595482953452">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1175" y="262" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595482953452" />
+    <state x="1113" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1595575833789">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1113" y="219" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595575833789" />
   </component>
 </project>

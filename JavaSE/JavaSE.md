@@ -598,6 +598,13 @@ super vs this
 + 方法重写
 + 父类引用指向子类
 
+==和equals()的区别
+
++ ==既可以判断基本数据类型也可以判断引用数据类型。对于基本数据类型，判断的是值是否相等。对于引用判断类型，判断的是指向的地址是否相等，即是否指向同一个对象
++ equals()是方法法，而非运算符，只适用于引用数据类型。Object类中equals()与==作用相同，比较两个对象的地址值是否相等，即两个引用是否指向同一个对象。重写过的equals()通常是比较两个对象的实体内容（属性）是否相等
+
+
+
 ## 5.6 instanceof和强制转换
 
 ```java
@@ -683,6 +690,239 @@ OO的精髓是对对象的抽象，最能体现这一点的就是接口。讨论
 内部类就是在一个类的内部再定义一个类，比如，A类中定义一个B类，那么B类相对A类来说就成为内部类，而A类相对B类来说就是外部类
 
 1. 成员内部类
+
+   内部类可以获得外部类的私有属性
+
 2. 静态内部类
+
 3. 局部内部类
+
 4. 匿名内部类
+
+# 6 异常
+
+## 6.1异常
+
+原件运行过程中，可能遇到输入不合法，文件不存在，内存或硬盘满了等异常情况，叫做异常（Exception）
+
+三类异常：
+
++ 检查性异常：用户错误或问题引起的异常，无法预见。例如要打开不存在的文件
++ 运行时异常：运行时异常容易被避免，与检查性异常相反，运行时异常再编译时易被忽略
++ 错误：错误不是异常，与JVM相关
+
+异常体系结构
+
++ Java把异常当作对象来处理，并基础一个个基类java.lang.Throwable作为所有异常的超类
++ 在Java API中已经定义了许多异常类，分为两大类，错误Error和异常Exception
+
+Error
+
++ Error类由Java虚拟机生成并抛出，大多数错误与代码编写者所执行的操作无关
++ Java虚拟机错误（Virtual MachineError），当JVM不在有继续操作所需的内存资源时，将出现OutofMemoryError，这些异常发生时，JVM一般会选择线程终止
++ 还有发生在虚拟机试图执行应用时，如类定义错误（NoClassDefFoundError）、链接错误（（LinkageError）。这些错误是不可查的，因为它们在应用程序的控制和处理能力之外，而且绝大多数是程序运行时不允许出现的状况。
+
+Exception
+
++ 在Exception分支中有一个重要的子类RuntimeException（运行时异常）
+  + ArrayIndexOutOfBoundException
+  + NullPointerException
+  + ArithmeticExceotion
+  + MissingResourceException
+  + ClassNotFoundException
++ 这些异常一般是由程序逻辑错误引起的，程序应该从逻辑角度尽可能避免这类异常的发生
++ Error与Exception的区别：Error通常是灾难性的致命的错误，是程序无法控制和处理的，当出现这些异常时，JVM一般会选择中止线程；Exception通常情况下是可以被程序处理的，并且在程序中应该尽可能去处理这些异常
+
+## 6.1 捕获和抛出异常
+
++ 抛出异常
++ 捕获异常
++ 五个关键字
+  + try 
+  + catch
+  + finally
+  + throw 主动抛出异常，一般在方法中使用
+  + throws 方法处理不了异常，向上抛出
+
+```java
+public void test(int a,int b) throws ArithmeticException{
+    if(b == 0){
+        throw new ArithmeticException();
+    }
+}
+```
+
+## 6.3 自定义异常
+
+使用Java内置的异常类可以描述在编程时出现的大部分异常情况。除此之外，用户还可以自定义异常。用户自定义异常类，只需继承Exception类即可。
+
+在程序中使用自定义异常，答题可分为一下几个步骤：
+
+1. 创建自定义异常类
+2. 在方法中通过throw关键字抛出异常对象
+3. 如果在当前抛出异常的方法中处理异常，可以使用try-catch语句捕获并处理；否则在方法的声明出通过throws关键字指明要抛出给方法调用者的异常，继续进行下一步操作
+4. 在出现异常的方法的调用者中捕获并处理异常
+
+# 7 常用类
+
+## 7.1 String
+
+java.lang.String类代表**不可变**的字符序列
+
+“xxxxx”为该类的一个对象
+
+常见构造方法
+
++ ```java
+  String(String original)
+  ```
+
+  创建一个String对象为original的拷贝
+
++ ```java
+  String(char[] value)
+  ```
+
+  用一个字符数组创建一个String对象
+
++ ```java
+  String(char[] value,int offset,int count)
+  ```
+
+  用一个字符数组从offset项开始的count个字符序列创建一个String对象
+
+String的不可变性
+
++ 当对字符串重新赋值时，需要重写指定内存区域赋值，不能使用原有的value进行赋值
++ 当对现有的字符串进行连接操作时，也需要指定内存区域赋值，不能使用原有的value进行操作
++ 当调用replace()方法修改指定字符或字符串时，也需要重新指定内存区域
+
+String StringBuffer StringBuilder三者的对比
+
++ String：不可变的字符序列，底层用char[]存储
++ StringBuffer：可变的字符序列，线程安全，效率低，底层用char[]存储
++ StringBuilder：可变的字符序列，JDK5新增，线程不安全，效率高，底层用char[]存储
+
+StringBuffer底层
+
+```java
+String str = new String();//char[] value = new char[0];
+String str1 = new String("abc");//char[] value = new char[]{'a','b','c'};
+
+StringBuffer sb = new StringBuffer();//char[] value = new char[16];
+System.out.println(sb.length());
+sb.append('a');
+sb.append('b');
+System.out.println(sb.length());
+StringBuffer sb2 = new StringBuffer("abc");//char[] value = new char["abc".length()+16]{};
+System.out.println(sb2.length());
+```
+
+StringBuffer扩容
+
++ 如果要添加的数据底层数组盛不下了，需要扩容底层的数组
++ 默认情况下，扩容为原来容量的2倍+2，同时将原有数组中的元素复制到新的数组中
+
+## 7.2 Date类
+
+构造器使用
+
++ ```java
+  Date date = new Date();
+  ```
+
+  创建对应当前时间的Date对象
+
++ ```java
+  new Date = new Date(21312334525L);
+  ```
+
+  创建指定时间戳的Date对象
+
+方法使用
+
++ ```java
+  System.out.println(date1.toString());
+  ```
+
+  显示当前的年月日时分秒
+
++ ```java
+  System.out.println(data1.getTime());
+  ```
+
+  获得时间戳，等同于currentTimeMillis()
+
+SimpleDateFormat
+
+对日期Date类的格式化和解析
+
+两个操作
+
++ 格式化：日期 ->字符串
+
+  ```java
+  SimpleDateFormat sdf = new SimpleDateFormat();
+  Date date = new Date();
+  System.out.println(date);
+  
+  String format = sdf.format(date);
+  System.out.println(format);
+  ```
+
+  
+
++ 解析：格式化的逆过程 字符串 ->日期
+
+  ```java
+  String str = "20-7-25 下午3:02";
+  Date parse = sdf.parse(str);
+  System.out.println(parse);
+  ```
+
+  带参的指定格式的格式化
+
+  ```java
+  SimpleDateFormat sdf1 =new SimpleDateFormat("yyy-MM-dd hh:mm:ss");
+  String format1 = sdf1.format(date);
+  System.out.println(format1);
+  ```
+
+Calendar类
+
+抽象类，实例化需要调用
+
++ Calendar.getInstance()方法
+
+  ```java
+  Calendar calendar = Calendar.getInstance();
+  ```
+
++ 子类GregorianCalendar的构造器
+
+set get add getTime setTime操作
+
+```java
+int days = calendar.get(Calendar.DAY_OF_MONTH);
+calendar.set(Calendar.DAY_OF_MONTH,22);
+calendar.add(Calendar.DAY_OF_MONTH,3);
+Date date = calendar.getTime();//日历类->Date
+
+Date date1 = new Date();
+calendar.setTime(date1);//Date -> 日历类
+```
+
+## 7.3 System类
+
+## 7.4 Math类
+
+## 7.5 BigInteger  BigDecimal
+
+
+
+
+
+TODO
+
+常用类：Object Math Random File 包装类 Date String StringBuffer StringBuilder 
+
