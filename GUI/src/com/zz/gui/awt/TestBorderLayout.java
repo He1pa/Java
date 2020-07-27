@@ -1,4 +1,4 @@
-package com.zz.gui1;
+package com.zz.gui.awt;
 
 import java.awt.*;
 
