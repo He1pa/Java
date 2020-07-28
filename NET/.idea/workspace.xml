@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f2c50d97-42af-4625-9e53-9bd46d166bd3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1fGwaIaU04BAUUUrtXGuL4a8XCE" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/StartGame.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zz.chat" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.URLDemo01">
+    <configuration name="TalkStudent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zz.chat.TalkStudent" />
+      <module name="NET" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zz.chat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TalkTeacher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zz.chat.TalkTeacher" />
+      <module name="NET" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zz.chat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UDPReceiveDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zz.chat.UDPReceiveDemo01" />
+      <module name="NET" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zz.chat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UDPSenderDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zz.chat.UDPSenderDemo01" />
+      <module name="NET" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zz.chat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="URLDemo01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zz.net.URLDemo01" />
+      <module name="NET" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zz.net.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.URLDemo01" />
+        <item itemvalue="Application.TalkTeacher" />
+        <item itemvalue="Application.TalkStudent" />
+        <item itemvalue="Application.UDPSenderDemo01" />
+        <item itemvalue="Application.UDPReceiveDemo01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2c50d97-42af-4625-9e53-9bd46d166bd3" name="Default Changelist" comment="" />
+      <created>1595857798787</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595857798787</updated>
+      <workItem from="1595857808083" duration="3473000" />
+      <workItem from="1595913755899" duration="11199000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="240" y="174" key="#StartGame" timestamp="1595868002675">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="240" y="174" key="#StartGame/0.0.1920.1040@0.0.1920.1040" timestamp="1595868002675" />
+    <state x="1264" y="185" key="#com.intellij.ide.util.MemberChooser" timestamp="1595945021758">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1264" y="185" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1595945021758" />
+    <state x="1195" y="300" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1595867966099">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1195" y="300" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595867966099" />
+    <state x="1239" y="234" key="FileChooserDialogImpl" timestamp="1595867952479">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1239" y="234" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595867952479" />
+    <state width="875" height="231" key="GridCell.Tab.0.bottom" timestamp="1595948713026">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="875" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595948713026" />
+    <state width="875" height="231" key="GridCell.Tab.0.center" timestamp="1595948713025">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="875" height="231" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595948713025" />
+    <state width="875" height="231" key="GridCell.Tab.0.left" timestamp="1595948713025">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="875" height="231" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595948713025" />
+    <state width="875" height="231" key="GridCell.Tab.0.right" timestamp="1595948713025">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="875" height="231" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595948713025" />
+    <state width="1877" height="286" key="GridCell.Tab.1.bottom" timestamp="1595948711628">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="286" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595948711628" />
+    <state width="1877" height="286" key="GridCell.Tab.1.center" timestamp="1595948711628">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="286" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595948711628" />
+    <state width="1877" height="286" key="GridCell.Tab.1.left" timestamp="1595948711627">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="286" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595948711627" />
+    <state width="1877" height="286" key="GridCell.Tab.1.right" timestamp="1595948711628">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="286" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595948711628" />
+    <state x="914" y="180" width="672" height="676" key="search.everywhere.popup" timestamp="1595945232927">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="914" y="180" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1595945232927" />
+  </component>
+</project>
