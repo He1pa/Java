@@ -1,4 +1,3 @@
-```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -7,18 +6,6 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0"
          metadata-complete="true">
 
-</web-app>
-```
 
-```xml
-    <!--注册servlet-->
-    <servlet>
-        <servlet-name>hello</servlet-name>
-        <servlet-class>com.zz.servlet.HelloServlet</servlet-class>
-    </servlet>
-    <!--请求路径-->
-    <servlet-mapping>
-        <servlet-name>hello</servlet-name>
-        <url-pattern>/hello</url-pattern>
-    </servlet-mapping>
-```
+
+</web-app>

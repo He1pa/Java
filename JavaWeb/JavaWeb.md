@@ -623,49 +623,330 @@ Servlet是由Web服务器调用，web服务器在收到浏览器请求之后，�
 
 web容器在启动的时候，它会为每个web程序都创建一个对应的ServletContext对象，它代表了当前的web应用；
 
-+ 共享数据
+### 1.共享数据
 
-  我再这个Servlet中保存的数据，可以在另一个servlet中拿到
+我再这个Servlet中保存的数据，可以在另一个servlet中拿到
 
-  放数据：
+放数据：
 
-  ```java
-  public class HelloServlet extends HttpServlet {
-      @Override
-      protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-  
-          //this.getInitParameter();
-          //this.getServletConfig();
-          ServletContext servletContext = this.getServletContext();
-          String name = "zz";
-          servletContext.setAttribute("username",name);//将数据保存在context中，名字为username，值为“zz”
-          System.out.println("hello");
-      }
-  
-  
-  }
-  
-  ```
+```java
+public class HelloServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-  读数据
+        //this.getInitParameter();
+        //this.getServletConfig();
+        ServletContext servletContext = this.getServletContext();
+        String name = "zz";
+        servletContext.setAttribute("username",name);//将数据保存在context中，名字为username，值为“zz”
+        System.out.println("hello");
+    }
 
-  ```java
-  public class GetServlet extends HttpServlet {
-      @Override
-      protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-          ServletContext servletContext = this.getServletContext();
-          String username = (String)servletContext.getAttribute("username");
-          resp.setContentType("text/html");
-          resp.setCharacterEncoding("utf-8");
-          PrintWriter writer = resp.getWriter();
-          writer.println("姓名："+ username);
-      }
-  
-      @Override
-      protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-          doGet(req, resp);
-      }
-  }
-  ```
 
-  
+}
+
+```
+
+读数据
+
+```java
+public class GetServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext servletContext = this.getServletContext();
+        String username = (String)servletContext.getAttribute("username");
+        resp.setContentType("text/html");
+        resp.setCharacterEncoding("utf-8");
+        PrintWriter writer = resp.getWriter();
+        writer.println("姓名："+ username);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+}
+```
+
+### 2.获取初始化参数
+
+```xml
+    <!--配置web初始化参数-->
+    <context-param>
+        <param-name>url</param-name>
+        <param-value>jdbc:mysql://localhost:3306/mybatis</param-value>
+    </context-param>
+```
+
+```java
+public class ServletDemo03 extends HttpServlet {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context = this.getServletContext();
+        String url = context.getInitParameter("url");
+        resp.getWriter().println(url);
+
+    }
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doGet(req, resp);
+    }
+}
+```
+
+### 3.请求转发
+
+```java
+public class ServletDemo04 extends HttpServlet {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context = this.getServletContext();
+        System.out.println("进入了Demo04");
+        RequestDispatcher requestDispatcher = context.getRequestDispatcher("/gp");
+        requestDispatcher.forward(req,resp);
+
+    }
+
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        this.doGet(req, resp);
+    }
+}
+
+```
+
+重定向与转发：
+
+![image-20200810163353282](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810163353282.png)
+
+### 4.读取资源文件
+
+Properties
+
++ 在java目录下新建properties
++ 在resources目录下新建properties
+
+发现都被打包到了同一个路径下：classes，俗称classpath
+
+思路：需要一个文件流
+
+```java
+public class ServletDemo05 extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        InputStream is = this.getServletContext().getResourceAsStream("/WEB-INF/classes/db.properties");
+        Properties prop = new Properties();
+        prop.load(is);
+        String username = prop.getProperty("username");
+        String password = prop.getProperty("password");
+
+        resp.getWriter().println(username);
+        resp.getWriter().println(password);
+        is.close();
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+```
+
+## 6.6 HttpServletResponse
+
+web服务器接收到客户端的http请求，针对这个请求，分别创建一个代表请求的HttpServletRequest对象和一个代表响应的HttpServletResponse对象
+
++ 如果要获取客户端请求过来的参数 ：找HttpServletRequest
++ 如果要给客户端响应一些信息，找HttpServletResponse
+
+### 1.简单分类
+
+负责向浏览器发送数据的方法
+
+```java
+ servletOutputstream getOutputstream() throws IOException;
+    Printwriter getwriter() throws IOException;
+```
+
+负责向浏览器发送响应头的方法
+
+```java
+void setCharacterEncoding(String var1)；
+void setContentLength(int var1)；
+void setContentLengthLong(long var1);
+void setContentType(String var1)；
+void setDateHeader(String varl,long var2)
+void addDateHeader(String var1,long var2)
+void setHeader(String var1,String var2);
+void addHeader(String var1,String var2)；
+void setIntHeader(String var1,int var2);
+void addIntHeader(String varl,int var2);
+```
+
+响应的状态码
+
+```java
+    int SC_OK = 200;
+    int SC_NOT_FOUND = 404;
+    int SC_BAD_GATEWAY = 502;
+```
+
+### 2.常见应用
+
+1. 向浏览器输出消息
+
+2. 下载文件
+
+   1. 要获取下载文件的路径
+   2. 下载的文件名
+   3. 下载的文件名设置想办法让浏览器支持下载需要的东西
+   4. 获取下载文件的输入流
+   5. 创建缓冲区
+   6. 获取OutputStream对象
+   7. 将FileOutputStream流写入到buffer缓冲区
+   8. 使用OutputStream将缓冲区中的数据输出到客户端
+
+3. 验证码
+
+   验证码怎么来的？
+
+   + 前端实现
+   + 后端实现，需要用到java的图片类，生成图片
+
+4. **重定向**
+
+   ![image-20200810184241730](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810184241730.png)
+
+   一个web资源收到客户端请求后，他会通知A客户端去访问另一个web资源C，这个过程叫重定向
+
+   常见场景
+
+   + 用户登录
+
+```java
+public class RedirectServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.sendRedirect("/response/image");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+}
+```
+
+重定向和转发的区别？
+
+相同点：
+
++ 页面都会发生变化
+
+不同点：
+
++ 请求转发的时候，url不会发生变化
++ 重定向的时候，url地址会发生变化
+
+index.jsp
+
+```jsp
+<html>
+<body>
+<h2>Hello World!</h2>
+<%--这里提交的路径需要寻找到项目的路径--%>
+<%--${pageContext. request, contextPath}代表当前的项目--%>
+<form action="${pageContext.request.contextPath}/login" method="get">
+    用户名:<input type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    <input type="submit">
+
+</form>
+</body>
+</html>
+
+```
+
+RequestTest
+
+```java
+public class RequestTest extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //处理请求
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+
+        System.out.println(username+password);
+        //重定向的时候一定要注意路径问题，否则404
+        resp.sendRedirect("/response/success.jsp");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+}
+```
+
+
+
+## 6.7 HttpServletRequest
+
+HttpServletRequest代表客户端的请求，用户通过Http协议访问服务器，Http请求中的所有信息会被封装到HttpServletRequest,通过这个HttpServletRequest的方法,获得客户端的所有信息
+
+
+
+![image-20200810192812503](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810192812503.png)
+
+![image-20200810192825638](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810192825638.png)
+
+### 1.获取前端的参数
+
+![image-20200810193006772](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810193006772.png)
+
+```java
+package com.zz.request;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Arrays;
+
+public class LoginServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.setCharacterEncoding("utf-8");
+        resp.setCharacterEncoding("utf-8");
+
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+
+        String[] hobbies = req.getParameterValues("hobby");
+        System.out.println(username);
+        System.out.println(password);
+        System.out.println(Arrays.toString(hobbies));
+
+        //通过请求转发
+        // 这里的/ 代表当前的web应用
+        req.getRequestDispatcher("/success.jsp").forward(req, resp);
+
+
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+}
+```
+
+重定向和转发的区别？
+
+相同点：
+
++ 页面都会发生变化
+
+不同点：
+
++ 请求转发的时候，url不会发生变化  307
++ 重定向的时候，url地址会发生变化  302
