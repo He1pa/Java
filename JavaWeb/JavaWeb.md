@@ -40,7 +40,7 @@ web应用程序编写完毕后，若想提供给外界访问，需要一个服�
 
 + *.htm *.html都是网页的后缀，如果服务器上一直存在这些东西，就可以直接进行读取，通信
 
-  ![image-20200809121556239](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809121556239.png)
+  ![image-20200810203757040](JavaWeb.assets/image-20200810203757040.png)
 
 + 静态web存在的缺点
   + Web页面无法动态更新，所有用户看到的都是同一个页面
@@ -53,7 +53,7 @@ web应用程序编写完毕后，若想提供给外界访问，需要一个服�
 
 页面会动态显示，Web的页面显示效果因人而异
 
-![image-20200809122247493](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809122247493.png)
+![image-20200810203749730](JavaWeb.assets/image-20200810203749730.png)
 
 缺点
 
@@ -67,7 +67,7 @@ web应用程序编写完毕后，若想提供给外界访问，需要一个服�
 + Web页面可以动态更新，所有用户看到的不是同一个页面
 + 可以与数据库交互
 
-![image-20200809122508599](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809122508599.png)
+![](JavaWeb.assets/image-20200810203735337.png)
 
 # 2 Web服务器
 
@@ -120,7 +120,7 @@ https://tomcat.apache.org/
 
 文件夹：
 
-![image-20200809124449786](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809124449786.png)
+![](JavaWeb.assets/image-20200810203727279.png)
 
 启动，关闭Tomcat
 
@@ -130,7 +130,7 @@ bin>startup.bat  / shutdown.bat
 
 ## 3.3 配置
 
-![image-20200809124850256](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809124850256.png)
+![image-20200810203719364](JavaWeb.assets/image-20200810203719364.png)
 
 可以配置启动的端口号
 
@@ -162,7 +162,7 @@ bin>startup.bat  / shutdown.bat
 1. 输入域名
 2. 检查本机的hosts配置文件下有没有这个域名映射
    1. 有，直接放回对应的ip地址，在这个地址中，有需要访问的web程序，可以直接访问
-   2. 没有：去DNS解析![image-20200809130140793](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809130140793.png)
+   2. 没有：去DNS解析![image-20200810203708259](JavaWeb.assets/image-20200810203708259.png)
 
 ## 3.4 发布web网站
 
@@ -346,18 +346,18 @@ Maven会规定要如何去编写Java代码，必需按规范来。
 1. 启动IDEA
 2. 创建Maven项目
 
-![image-20200809153034942](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809153034942.png)
+![image-20200810203643281](JavaWeb.assets/image-20200810203643281.png)
 
-![image-20200809153118301](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809153118301.png)
+![image-20200810203635647](JavaWeb.assets/image-20200810203635647.png)
 
-![image-20200809153128090](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809153128090.png)
+![image-20200810203626547](JavaWeb.assets/image-20200810203626547.png)
 
 3. 自动导入包
 
-![image-20200809153339551](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809153339551.png)
+![image-20200809153649447](JavaWeb.assets/image-20200809153649447-1597062868074.png)
 
 4. 观察Maven仓库多了什么东西？
-5. IDEA中的Maven设置![image-20200809153652721](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809153652721.png)
+5. IDEA中的Maven设置![image-20200809153652721](JavaWeb.assets/image-20200809153652721.png)
 
 注意：项目创建完成后，IDEA有时候会选择默认的Maven，要切换成本地的
 
@@ -367,29 +367,29 @@ Maven会规定要如何去编写Java代码，必需按规范来。
 
 ## 5.8 标记文件夹功能
 
-![image-20200809154810436](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809154810436.png)
+![image-20200809154810436](JavaWeb.assets/image-20200809154810436.png)
 
-![image-20200809154954627](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809154954627.png)
+![](JavaWeb.assets/image-20200809154954627.png)
 
 ## 5.9 在IDEA中配置Tomcat
 
-![image-20200809155432217](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809155432217.png)
+![image-20200809155432217](JavaWeb.assets/image-20200809155432217.png)
 
-![image-20200809155504072](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809155504072.png)
+![image-20200809155504072](JavaWeb.assets/image-20200809155504072.png)
 
 
-![image-20200809155955019](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809155955019.png)
+![image-20200809155955019](JavaWeb.assets/image-20200809155955019.png)
 
-![image-20200809160017505](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809160017505.png)
+![image-20200809160017505](JavaWeb.assets/image-20200809160017505.png)
 
 点击启动
 
-![image-20200809160246508](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809160246508.png)
+![image-20200809160246508](JavaWeb.assets/image-20200809160246508-1597062778904.png)
 
 
 ## 5.10 pom文件
 pom.xml是Maven的核心配置文件
-![image-20200809160632461](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809160632461.png)
+![image-20200809160632461](JavaWeb.assets/image-20200809160632461.png)
 
 
 
@@ -525,7 +525,7 @@ public class HelloServlet extends HttpServlet {
 
 Servlet是由Web服务器调用，web服务器在收到浏览器请求之后，会：
 
-![image-20200809211518115](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200809211518115.png)
+![image-20200809211518115](JavaWeb.assets/image-20200809211518115.png)
 
 ## 6.4 Mapping
 
@@ -714,7 +714,7 @@ public class ServletDemo04 extends HttpServlet {
 
 重定向与转发：
 
-![image-20200810163353282](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810163353282.png)
+![image-20200810163353282](JavaWeb.assets/image-20200810163353282.png)
 
 ### 4.读取资源文件
 
@@ -812,7 +812,7 @@ void addIntHeader(String varl,int var2);
 
 4. **重定向**
 
-   ![image-20200810184241730](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810184241730.png)
+   ![image-20200810184241730](JavaWeb.assets/image-20200810184241730.png)
 
    一个web资源收到客户端请求后，他会通知A客户端去访问另一个web资源C，这个过程叫重定向
 
@@ -894,13 +894,13 @@ HttpServletRequest代表客户端的请求，用户通过Http协议访问服务�
 
 
 
-![image-20200810192812503](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810192812503.png)
+![image-20200810192812503](JavaWeb.assets/image-20200810192812503.png)
 
-![image-20200810192825638](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810192825638.png)
+![image-20200810192825638](JavaWeb.assets/image-20200810192825638.png)
 
 ### 1.获取前端的参数
 
-![image-20200810193006772](C:\Users\ZZ\AppData\Roaming\Typora\typora-user-images\image-20200810193006772.png)
+![image-20200810193006772](JavaWeb.assets/image-20200810193006772.png)
 
 ```java
 package com.zz.request;
