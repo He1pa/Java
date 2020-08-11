@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*id 选择器格式:id必须保证全局唯一
+        #id名称{}
+        不遵循就近原则 id>class>标签选择器
+        */
+        #zz{
+            color: red;
+        }
+        .zz{
+            color: green;
+        }
+        h1{
+            color: blue;
+        }
+
+    </style>
+</head>
+<body>
+<h1 id="zz">标题</h1>
+<h1 class="zz">标题</h1>
+<h1>标题</h1>
+<h1>标题</h1>
+<h1>标题</h1>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .demo a{
+            float: left;
+            display: block;
+            height: 50px;
+            width: 50px;
+            border-radius: 10px;
+            background: red;
+            text-align: center;
+            color: #000000;
+            text-decoration: none;
+            margin-right: 5px;
+            font: bold 20px/50px Arial;
+        }
+        /*
+        存在id属性的元素 a[]{}
+        属性名   属性名=属性值（正则）
+        */
+        a[id]{
+            background: yellow;
+        }
+        a[id=first]{
+            background: green;
+        }
+        /*class中又links的元素  =绝对等于  *=包含  ^=开头  $=结尾*/
+        a[class*="links"]{
+            color: blue;
+        }
+        /*选中href中以http开头的元素*/
+        a[href^=http]{
+            background: black;
+        }
+    </style>
+</head>
+<body>
+<p class="demo">
+    <a href="http://www.baidu.com" class="links item first" id="first">1</a>
+    <a href="" class="links item active" target="_blank" title="test" >2</a>
+    <a href="" class="link item" >3</a>
+    <a href="" class="link item">4</a>
+    <a href="http" class="link item">5</a>
+    <a href="" class="link item">6</a>
+    <a href="" class="link item" id="last">7</a>
+</p>
+</body>
+</html>

@@ -34,7 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resouces/image" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
@@ -53,6 +53,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597122036711</updated>
       <workItem from="1597122038149" duration="8521000" />
+      <workItem from="1597134786147" duration="1268000" />
     </task>
     <servers />
   </component>
@@ -60,10 +61,18 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="3612" y="449" key="FileChooserDialogImpl" timestamp="1597136257875">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3612" y="449" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597136257875" />
     <state x="3333" y="352" key="SettingsEditor" timestamp="1597122148112">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="3333" y="352" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597122148112" />
+    <state x="3207" y="318" key="new project wizard" timestamp="1597136262146">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3207" y="318" key="new project wizard/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597136262146" />
     <state x="3495" y="327" width="672" height="678" key="search.everywhere.popup" timestamp="1597123170195">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
