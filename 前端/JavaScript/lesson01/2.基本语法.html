@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <script>
+        // 1.定义变量 变量类型 变量名 = 变量值；
+        var num = 1;
+        var name = "zz";
+        var score = 60;
+        // 2. 条件控制
+        if (score > 60 && score <70){
+            alert("60-70");
+        }else if(score > 70 && score <80){
+            alert("70-80");
+        }else {
+            alert("other");
+        }
+        /*
+        * 多行注释
+        * */
+        //console.log(socre) 在浏览器控制台打印变量
+        new Map();
+        new Set();
+        var map = new Map([['tom',100],['jack',90],['haha',80]]);
+        var name = map.get('tom');
+        map.set('admin',123456);
+        map.delete('tom');
+        console.log(name);
+
+
+        var set = new Set([3,1,1,1,1]);//去重
+        //[3,1]
+        set.add(2);
+        set.delete(1);
+        console.log(set.has(3));
+
+
+
+
+
+
+    </script>
+<body>
+
+</body>
+</html>
