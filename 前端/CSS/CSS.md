@@ -461,3 +461,774 @@ text-decoration:none/*超链接去下划线*/
 text-decoration-color: red;/*线的颜色*/
 ```
 
+## 3.4 阴影
+
+```css
+/* text-shadow: 阴影颜色，水平偏移，垂直偏移，阴影半径*/
+        #author{
+            text-shadow: aqua 10px 10px 2px ;
+        }
+/*	第一个参数：表示水平偏移
+	第二个参数：表示垂直偏移
+	第三个参数：表示模糊半径
+	第四个参数：表示颜色
+*/
+text-shadow:5px 5px 5px 颜色
+```
+
+3.5 超链接伪类
+
+常用：a， a:hover
+
+```css
+        /*默认的颜色*/
+        a{
+            text-decoration: none;
+            color: #000000;
+        }
+        /*鼠标悬停的颜色*/
+        a：hover{
+            color: yellow;
+        }
+        /*鼠标按住未释放的状态*/
+        a:active{
+            color: green;
+            font-size: 50px;
+        }
+        a:visited{
+            color: red;
+        }
+```
+
+## 3.6 列表
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+<div id="nav">
+    <h2 class="title">全部商品分类</h2>
+    <ul>
+        <li><a href="#">图书</a>&nbsp;&nbsp;<a href="#">音响</a>&nbsp;&nbsp;<a href="#">数字商品</a></li>
+        <li><a href="#">家用电器</a>&nbsp;&nbsp;<a href="#">手机</a>&nbsp;&nbsp;<a href="#">数码</a></li>
+        <li><a href="#">电脑</a>&nbsp;&nbsp;<a href="#">办公</a></li>
+        <li><a href="#">家居</a>&nbsp;&nbsp;<a href="#">家装</a>&nbsp;&nbsp;<a href="#">厨具</a></li>
+        <li><a href="#">服饰鞋帽</a>&nbsp;&nbsp;<a href="#">个护化妆</a></li>
+        <li><a href="#">礼品箱包</a>&nbsp;&nbsp;<a href="#">中标</a>&nbsp;&nbsp;<a href="#">珠宝</a></li>
+        <li><a href="#">食品饮料</a>&nbsp;&nbsp;<a href="#">保健食品</a></li>
+        <li><a href="#">彩票</a>&nbsp;&nbsp;<a href="#">旅行</a>&nbsp;&nbsp;<a href="#">充值</a>&nbsp;&nbsp;<a href="#">票务</a></li>
+    </ul>
+</div>
+</body>
+</html>
+```
+
+```css
+#nav{
+    width: 300px;
+    background: grey;
+}
+.title{
+    font-size: 18px;
+    font-weight: bold;
+    text-indent: 1em;
+    line-height: 35px;
+    background: red;
+}
+/*ul li
+list-style:
+    none：去掉圆点
+    circle：空心圆
+    decimal：数字
+    spuare：正方形
+*/
+ul{
+    background: grey;
+}
+ul li{
+    height: 30px;
+    list-style: none;
+    text-indent: 1em
+;
+}
+a{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+a:hover{
+    color: darkorange;
+}
+```
+
+## 3.7 背景
+
+背景图片
+
+```css
+div{
+    width: 1000px;
+    height: 700px;
+    border: 1px solid red;
+    /*默认的平铺的*/
+    background-image: url("image/a.jpg");
+    /*水平和竖直平铺 不平铺*/
+    /*background-repeat: repeat-x;*/
+    /*background-repeat: repeat-y;*/
+    /*background-repeat: no-repeat;*/
+
+}
+```
+
+```css
+#nav{
+    width: 300px;
+    background: grey;
+}
+.title{
+    font-size: 18px;
+    font-weight: bold;
+    text-indent: 1em;
+    line-height: 35px;
+    /*颜色 图片 位置 平铺方式*/
+    background: red url("../images/d.jpg") 250px no-repeat ;
+}
+/*ul li
+list-style:
+    none：去掉圆点
+    circle：空心圆
+    decimal：数字
+    spuare：正方形
+*/
+ul{
+    background: grey;
+}
+ul li{
+    height: 30px;
+    list-style: none;
+    text-indent: 1em;
+    background-image: url("../images/l.jpg");
+    background-repeat: no-repeat;
+    background-position: 212px;
+}
+a{
+    text-decoration: none;
+    font-size: 14px;
+    color: black;
+}
+a:hover{
+    color: darkorange;
+}
+```
+
+![image-20200812131854014](CSS.assets/image-20200812131854014.png)
+
+3.8 渐变
+
+https://www.grabient.com/
+
+```css
+        body{
+            background-color: #FFFFFF;
+            background-image: linear-gradient(66deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
+        }
+```
+
+## 4 盒子模型
+
+## 4.1 什么是盒子模型
+
+![image-20200812132601828](CSS.assets/image-20200812132601828.png)
+
+margin：外边距
+
+padding：内边距
+
+border：边框
+
+## 4.2.边框
+
+1、边框的粗细
+
+2、边框的样式
+
+3、边框的颜色
+
+```css
+        /*默认的边距 设为0*/
+        h1,ul,li,a,body{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        form{
+            background: green;
+        }
+        div:nth-of-type(1) input{
+            border: 3px solid black;
+        }
+        #box{
+            width: 300px;
+            /*border: 粗细 样式 颜色*/
+            border: 1px solid red;
+        }
+        h2{
+            background-color: burlywood;
+            font-size: 16px;
+            line-height: 30px;
+            margin: 0;
+        }
+```
+
+## 4.3 内外边距
+
+margin: 0 auto; 居中元素
+
+```
+        #box{
+            width: 300px;
+            /*border: 粗细 样式 颜色*/
+            border: 1px solid red;
+            /*margin: 0 auto; 居中元素*/
+            margin: 0 auto;
+        }
+        /*
+顺时针选中
+margin: 0px; 上下左右全0
+margin: 0px 1px; 上下0 左右1
+margin: 1px 2px 3px 4px; 上右下左 顺时针
+*/
+        h2{
+            background-color: burlywood;
+            font-size: 16px;
+            line-height: 30px;
+            margin: 0 1px 2px 3px;
+        }
+        div:nth-of-type(1) input{
+            border: 3px solid black;
+            padding: 10px;
+        }
+```
+
+盒子计算方式：元素的大小
+
+![image-20200812135533326](CSS.assets/image-20200812135533326.png)
+
+margin + border + padding + 内容宽度
+
+## 4.4 圆角边框
+
+```html
+    <!--
+左上 右上 右下 左下，顺时针方向
+-->
+    <!--
+        圆圈： 圆角 = 半径
+    -->
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 10px solid red;
+            border-radius: 50px;
+        }
+    </style>
+```
+
+## 4.5 盒子阴影
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            box-shadow:10px 10px 100px yellow;
+        }
+        img  {
+            margin: 0 auto;
+            border-radius: 100px;
+            box-shadow:0px 0px 100px yellow;
+
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<br><br>
+<img src="image/a.jpg" alt="" width="100px" height="100px">
+</body>
+</html>
+```
+
+# 5 浮动
+
+## 5.1 标准文档流
+
+![image-20200812143009450](CSS.assets/image-20200812143009450.png)
+
+块级元素：独占一行	h1-h6 p div 列表…
+
+行内元素：不独占一行	span a img strong
+
+>注：行内元素可以被包含在 块级元素中，反之，则不可以
+
+## 5.2 display
+
+一种实现行内元素排列的方式,但很多时候都是使用float
+
+block 块元素
+
+inline 行内元素
+
+inline-block 是块元素，但是可以内联，在一行
+
+none 消失
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--
+block 块元素
+inline 行内元素
+inline-block 是块元素，但是可以内联，在一行
+none 消失
+-->
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: inline;
+        }
+        span{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+    </style>
+</head>
+<body>
+<div>div块元素</div>
+<span>span 行内元素</span>
+</body>
+</html>
+```
+
+## 5.3 float
+
+1 左右浮动
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+<div id="father">
+    <div class="layer01"><img src="images/1.png" alt=""></div>
+    <div class="layer02"><img src="images/2.png" alt=""></div>
+    <div class="layer03"><img src="images/3.png" alt=""></div>
+    <div class="layer04">
+        浮动的盒子可以向左浮动，也可以向右浮动，知道它的外边缘碰到包含或另一个浮动盒子为止
+    </div>
+</div>
+</body>
+</html>
+```
+
+```css
+div{
+    margin: 10px;
+    padding: 5px;
+}
+#father{
+    border: 1px #000 solid;
+}
+.layer01{
+    border: 1px #F00 dashed;
+    display: inline-block;
+    float: left;/*向左浮动*/
+    clear: both;/*清楚浮动*/
+}
+.layer02{
+    border: 1px #00F dashed;
+    display: inline-block;
+    float: left;
+    clear: both;
+}
+.layer03{
+    border: 1px #060 dashed;
+    display: inline-block;
+    float: left;
+    clear: both;
+}
+.layer04{
+    border: 1px #666 dashed;
+    font-size: 12px;
+    line-height: 23px;
+    float: left;
+    clear: both;
+}
+```
+
+## 5.4.父级边框塌陷问题
+
+clear
+
+clear：right；右侧不允许有浮动元素 
+
+clear：left； 左侧不允许有浮动元素 
+
+clear：both； 两侧不允许有浮动元素 
+
+clear：none；
+
+解决方案:
+
+1. 增加父级元素高度
+
+```css
+#father{
+    border: 1px #000 solid;
+    height: 800px;
+}
+```
+
+2. 增加一个空的div(class="clear")标签
+
+```css
+.clear{
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+```
+
+```html
+    <div class="clear"></div>
+```
+
+3. overflow
+
+在父级元素增加一个overflow:hidden
+
+```css
+#father{
+    border: 1px #000 solid;
+    height: 800px;
+    overflow: hidden;
+}
+```
+
+4. 在父类元素后添加伪类after
+
+```css
+#father:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+```
+
+小结:
+
++ 浮动元素后面增加空div
+  + 简单,但代码应中尽量避免空div
++ 设置父元素高度
+  + 简单,元素假设有了固定的高度,就会被限制
++ overflow
+  + 简单,下拉的场面避免使用
++ 添加伪类after(推荐)
+  + 没有副作用
+
+## 5.5 对比
+
++ display
+  + 方向不可控
++ float 
+  + 浮动起来的话会脱离标准文档流,要解决父级边框塌陷的问题
+
+# 6 定位
+
+默认情况
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            margin: 10px;
+            padding: 5px;
+            font-size: 12px;
+            line-height: 25px;
+        }
+        #father{
+            border: 10px dashed black;
+        }
+        #first{
+            border: 10px dashed red;
+            background-color: green;
+        }
+        #second{
+            border: 10px dashed green;
+            background-color: blue;
+        }
+        #third{
+            border: 10px dashed blue;
+            background-color: red;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="father">
+    <div id="first">第一个盒子</div>
+    <div id="second">第二个盒子</div>
+    <div id="third">第三个盒子</div>
+</div>
+
+</body>
+</html>
+```
+
+
+
+## 6.1 相对定位
+
+相对定位:position:relative;
+
+相对于原来的位置进行指定的偏移,仍在标准文档流中,原来的位置会被保留
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    相对定位
+        相对于自己原来的位置进行偏移
+        -->
+    <style>
+        div{
+            margin: 10px;
+            padding: 5px;
+            font-size: 12px;
+            line-height: 25px;
+        }
+        #father{
+            border: 10px dashed black;
+        }
+        #first{
+            border: 10px dashed red;
+            background-color: green;
+            position: relative;
+            top:-20px;
+            left:20px;
+        }
+        #second{
+            border: 10px dashed green;
+            background-color: blue;
+        }
+        #third{
+            border: 10px dashed blue;
+            background-color: red;
+            position: relative;
+            bottom:-10px;
+            right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="father">
+    <div id="first">第一个盒子</div>
+    <div id="second">第二个盒子</div>
+    <div id="third">第三个盒子</div>
+</div>
+
+</body>
+</html>
+```
+
+练习
+
+![image-20200812154111869](CSS.assets/image-20200812154111869.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #father{
+            width: 300px;
+            height: 300px;
+            padding: 10px;
+            border: 5px solid #FF0000;
+        }
+        #father:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        a{
+            display: block;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            text-decoration: none;
+            line-height: 100px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+        a:hover{
+            color: green;
+        }
+        #a2,#a4{
+            position: relative;
+            left: 200px;
+            bottom: 100px;
+        }
+        #a5{
+            background-color: #0000FF;
+            position: relative;
+            left: 100px;
+            bottom: 300px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="father">
+    <a href="#" id="a1">链接1</a>
+    <a href="#" id="a2">链接2</a>
+    <a href="#" id="a3">链接3</a>
+    <a href="#" id="a4">链接4</a>
+    <a href="#" id="a5">链接5</a>
+
+
+</div>
+</body>
+</html>
+```
+
+
+
+## 6.2 绝对定位
+
+定位:基于xxx定位
+
++ 没有父级元素定位的前提下,相对于浏览器定位
++ 假设父级元素存在定位,通常会相对于父级元素进行偏移
++ 在父级元素范围内移动
+
+相对于父级或浏览器的位置进行指定的偏移,绝对定位后,仍在标准文档流中,原来的位置不会被保留
+
+## 6.3 固定定位
+
+```css
+        div:nth-of-type(2){
+            /*固定定位*/
+            width: 50px;
+            height: 50px;
+            background: #0000FF;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+```
+
+
+
+## 6.4 z-index
+
+![image-20200812163646930](CSS.assets/image-20200812163646930.png)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="content">
+    <ul>
+        <li><img src="image/a.jpg" alt="" width="1000px" height="700px"></li>
+        <li class="tipText">sadasdasdasdasdadasasdas</li>
+        <li class="tipBg">asdasd</li>
+        <li>2131244</li>
+    </ul>
+</div>
+</body>
+</html>
+```
+
+```css
+#content{
+    width: 1000px;
+    height: 800px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 25px;
+    border: 1px solid black;
+}
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+#content ul{
+    position: relative;
+}
+.tipText,.tipBg{
+    position:absolute;
+    width: 1000px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 25px;
+    top: 500px;
+}
+.tipText{
+    color: #FFFFFF;
+    z-index: 999;
+}
+.tipBg{
+    background: black;
+    /*透明度*/
+    opacity: 0.5;
+}
+```
+
+# 7 动画

@@ -1,0 +1,44 @@
+div{
+    margin: 10px;
+    padding: 5px;
+}
+#father{
+    border: 1px #000 solid;
+    height: 800px;
+    overflow: hidden;
+}
+#father:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.layer01{
+    border: 1px #F00 dashed;
+    display: inline-block;
+    float: left;/*向左浮动*/
+    clear: both;/*清除浮动*/
+}
+.layer02{
+    border: 1px #00F dashed;
+    display: inline-block;
+    float: left;
+    clear: left;
+}
+.layer03{
+    border: 1px #060 dashed;
+    display: inline-block;
+    float: right;
+    clear: both;
+}
+.layer04{
+    border: 1px #666 dashed;
+    font-size: 12px;
+    line-height: 23px;
+    float: right;
+    clear: both;
+}
+.clear{
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
