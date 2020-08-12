@@ -13,17 +13,19 @@ MySQL JDBC 2020.8.8
 
 HTML 2020.8.11
 
+CSS 2020.8.12
+
 ## 目前进度
+
+JS
 
 JavaWeb
 
-CSS
+
 
 ## 计划
 
 多线程
-
-JS
 
 设计模式
 
