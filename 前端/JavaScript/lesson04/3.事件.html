@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="lib/jquery-3.3.1.js"></script>
+    <style>
+        #div{
+            width: 500px;
+            height: 500px;
+            border: 1px black solid;
+        }
+    </style>
+</head>
+<body>
+<!--获取鼠标当前的坐标-->
+mouse：<span id="move"></span>
+<div id="div">
+在这里移动鼠标
+
+</div>
+
+<script>
+//网页加载完毕后 响应事件
+    $(function () {
+        $('#div').mousemove(function (e) {
+            $('#move').text('x:'+ e.pageX + ',' + e.pageY);
+        });
+
+        });
+</script>
+</body>
+</html>

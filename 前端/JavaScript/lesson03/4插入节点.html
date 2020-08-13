@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="JS">JS</p>
+<div id="list">
+    <p id="se">JavaSE</p>
+    <p id="ee">JavaEE</p>
+    <p id="me">JavaME</p>
+</div>
+
+<script>
+    var ee = document.getElementById('ee');
+    var js = document.getElementById('JS');
+    var list = document.getElementById('list');
+    list.insertBefore(js,ee);
+</script>
+</body>
+</html>

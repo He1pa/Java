@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function zz() {
+        var x = 1;
+        function zz2() {
+            //内部函数可以访问外部函数的变量
+            var x =  2;
+            console.log(x);//2
+        }
+        zz2();
+        console.log(x);
+    }
+    zz();
+
+</script>
+<body>
+
+</body>
+</html>

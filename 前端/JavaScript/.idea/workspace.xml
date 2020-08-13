@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="6f613879-47f5-497e-b278-a9d9e4f60f42" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,12 +44,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lesson04/lib" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.CSS" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\前端\JavaScript\lesson04\lib" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Java\前端\JavaScript" />
     </key>
@@ -65,6 +72,8 @@
       <workItem from="1597238245971" duration="158000" />
       <workItem from="1597238421402" duration="91000" />
       <workItem from="1597238532122" duration="52000" />
+      <workItem from="1597238599763" duration="3387000" />
+      <workItem from="1597297606329" duration="15865000" />
     </task>
     <servers />
   </component>
@@ -72,17 +81,25 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="3353" y="716" key="#Custom_Plugin_Repositories" timestamp="1597297477478">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3353" y="716" key="#Custom_Plugin_Repositories/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597297477478" />
+    <state x="3252" y="535" key="#HTTP_Proxy" timestamp="1597297468466">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3252" y="535" key="#HTTP_Proxy/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597297468466" />
     <state x="2992" y="313" key="#Project_Structure" timestamp="1597228460751">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2992" y="313" key="#Project_Structure/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597228460751" />
-    <state x="3440" y="403" key="SettingsEditor" timestamp="1597238581785">
+    <state x="2560" y="466" key="SettingsEditor" timestamp="1597316607845">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3440" y="403" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597238581785" />
-    <state x="3619" y="377" width="672" height="678" key="search.everywhere.popup" timestamp="1597229685526">
+    <state x="2560" y="466" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597316607845" />
+    <state x="3619" y="377" width="672" height="678" key="search.everywhere.popup" timestamp="1597298037241">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3619" y="377" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597229685526" />
+    <state x="3619" y="377" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597298037241" />
   </component>
 </project>

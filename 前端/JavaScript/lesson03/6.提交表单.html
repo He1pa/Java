@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--MD5加密-->
+    <script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+</head>
+<body>
+
+<!--表单邦迪提交事件
+onsubmit 绑定一个提交检测的函数.true 提交 false不提交-->
+<form action="#" method="post" onsubmit="aaa">
+    <p>
+        <span>用户名</span>
+        <input type="text" id="username" name="username">
+    </p>
+    <p>
+        <span>密码：</span>
+        <input type="password" id="pwd" name="password">
+    </p>
+<!--    绑定事件    -->
+    <button type="submit" onclick="f()">提交</button>
+
+</form>
+
+<script>
+    function f() {
+        var uname = document.getElementById('username');
+        var pwd = document.getElementById('pwd');
+
+        console.log(uname.value);
+        console.log(pwd.value);
+        pwd.value = md5(pwd.value);
+        console.log(pwd.value);
+        //true 提交 false 不提交
+        return false;
+    }
+</script>
+</body>
+</html>
