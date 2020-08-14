@@ -1,25 +1,31 @@
 # Java
 
+> 文章对应视频教程，B站搜索关注 狂神说Java
+
 https://space.bilibili.com/95256449/
 
 ## 已完成
-JavaSE 2020.7.23
+JavaSE 
 
-GUI 2020.7.25
+GUI 
 
-网络编程 2020.7.29
+网络编程 
 
-MySQL JDBC 2020.8.8
+MySQL JDBC 
 
-HTML 2020.8.11
+HTML 
 
-CSS 2020.8.12
+CSS 
+
+JavaScript 
+
+JavaWeb
+
+
 
 ## 目前进度
 
-JS
-
-JavaWeb
+MyBatis
 
 
 
@@ -31,6 +37,6 @@ JavaWeb
 
 VUE
 
-SSM
+Spring SpringMVC  Springboot 
 
 
