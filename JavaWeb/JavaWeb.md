@@ -1075,3 +1075,761 @@ Session
 ServletContext
 
 ![image-20200811115641403](JavaWeb.assets/image-20200811115641403.png)
+
+# 8 JSP
+
+## 8.1 什么是JSP
+
+Java Server Pages:Java服务器端页面，也和Servlet一样，用于动态Web技术！
+
+最大的特点：
+
++ JSP就像HTML
+
++ 区别
+
+  + HTML只给用户提供静态的数据
+  + jsp页面中可以嵌入Java代码，为用户提供动态数据
+
+  
+
+## 8.2 JSP原理
+
+思路：JSP是怎么执行的？
+
++ 代码层面：与HTML相同
+
++ 服务器内部工作
+
+  + tomcat中有一个work目录
+
+    IDEA中使用tomcat会在IDEA的tomcat中生成一个work目录
+
+**浏览器向服务器发送请求，不管访问什么资源，其实都是在访问Servlet**
+
+JSP最终也会被转换成一个Java类
+
+**JSP本质实就是一个Servlet**
+
+```java
+//初始化
+  public void _jspInit() {
+      
+  }
+//销毁
+  public void _jspDestroy() {
+  }
+//JSPService
+  public void _jspService(.HttpServletRequest request,HttpServletResponse response)
+```
+
+1. 判断请求
+2. 内置了一些对象
+
+```java
+final javax.servlet.jsp.PageContext pageContext;  //页面上下文
+javax.servlet.http.HttpSession session = null;    //session
+final javax.servlet.ServletContext application;   //applicationContext
+final javax.servlet.ServletConfig config;         //config
+javax.servlet.jsp.JspWriter out = null;           //out
+final java.lang.Object page = this;               //page：当前
+HttpServletRequest request                        //请求
+HttpServletResponse response                      //响应
+```
+
+3. 输出页面前增加的代码
+
+```java
+response.setContentType("text/html");       //设置响应的页面类型
+pageContext = _jspxFactory.getPageContext(this, request, response,
+       null, true, 8192, true);
+_jspx_page_context = pageContext;
+application = pageContext.getServletContext();
+config = pageContext.getServletConfig();
+session = pageContext.getSession();
+out = pageContext.getOut();
+_jspx_out = out;
+```
+
+4. 以上的这些个对象我们可以在JSP页面中直接使用！
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200506183804973.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2JlbGxfbG92ZQ==,size_16,color_FFFFFF,t_70)
+
+在JSP页面中；
+
+只要是 JAVA代码就会原封不动的输出；
+
+如果是HTML代码，就会被转换为：
+
+```java
+out.write("<html>\r\n");
+```
+
+输出到前端
+
+## 8.3、JSP基础语法
+
+任何语言都有自己的语法，JAVA中有,。 JSP 作为java技术的一种应用，它拥有一些自己扩充的语法（了解，知道即可！），Java所有语法都支持！
+
+```jsp
+<%--JSP表达式
+作用：用来将程序的输出，输出到客户端
+<%= 变量或者表达式%>
+--%>
+<%= new java.util.Date()%>
+```
+
+jsp脚本片段
+
+```jsp
+  <%--jsp脚本片段--%>
+  <%
+    int sum = 0;
+    for (int i = 1; i <=100 ; i++) {
+      sum+=i;
+    }
+    out.println("<h1>Sum="+sum+"</h1>");
+  %>
+```
+
+脚本片段的再实现
+
+```jsp
+ <%
+    int x = 10;
+    out.println(x);
+  %>
+  <p>这是一个JSP文档</p>
+  <%
+    int y = 2;
+    out.println(y);
+  %>
+
+  <hr>
+
+
+  <%--在代码嵌入HTML元素--%>
+  <%
+    for (int i = 0; i < 5; i++) {
+  %>
+  <h1>Hello,World  <%=i%> </h1>
+  <%
+    }
+  %>
+```
+
+JSP声明
+
+```jsp
+  <%!
+    static {
+      System.out.println("Loading Servlet!");
+    }
+
+    private int globalVar = 0;
+
+    public void kuang(){
+      System.out.println("进入了方法Kuang！");
+    }
+  %>
+```
+
+JSP声明：会被编译到JSP生成Java的类中！其他的，就会被生成到_jspService方法中！
+
+在JSP，嵌入Java代码即可！
+
+```jsp
+<%%>//中间写java代码
+<%=%>//输出（变量或表达式）
+<%!%>//声明（全局变量）
+<%--注释--%>
+```
+
+JSP的注释，不会在客户端显示，HTML的会！
+
+## 8.4 JSP指令
+
+```jsp
+<%@page args.... %>
+<%@include file=""%>
+
+<%--@include会将两个页面合二为一--%>
+
+<%@include file="common/header.jsp"%>
+<h1>网页主体</h1>
+
+<%@include file="common/footer.jsp"%>
+
+<hr>
+
+
+<%--jSP标签
+    jsp:include：拼接页面，本质还是三个
+    --%>
+<jsp:include page="/common/header.jsp"/>
+<h1>网页主体</h1>
+<jsp:include page="/common/footer.jsp"/>
+```
+
+## 8.5 9大内置对象
+
+- PageContext    存东西
+
+- Request     存东西
+
+- Response
+
+- Session      存东西
+
+- Application   【SerlvetContext】   存东西
+
+- config    【SerlvetConfig】
+
+- out
+
+- page ，不用了解
+
+- exception
+
+- ```java
+  pageContext.setAttribute("name1","zz1");//保存的数据只在一个页面中有效
+  request.setAttribute("name2","zz2"); //保存的数据只在一次请求中有效，请求转发会携带这个数据
+  session.setAttribute("name3","zz3"); //保存的数据只在一次会话中有效，从打开浏览器到关闭浏览器
+  application.setAttribute("name4","zz4");  //保存的数据只在服务器中有效，从打开服务器到关闭服务器
+  ```
+
+  request：客户端向服务器发送请求，产生的数据，用户看完就没用了，比如：新闻，用户看完没用的！
+
+  session：客户端向服务器发送请求，产生的数据，用户用完一会还有用，比如：购物车；
+
+  application：客户端向服务器发送请求，产生的数据，一个用户用完了，其他用户还可能使用，比如：聊天数据；
+
+## 8.6、JSP标签、JSTL标签、EL表达式
+
+```xml
+<dependency>
+    <groupId>javax.servlet.jsp.jstl</groupId>
+    <artifactId>jstl-api</artifactId>
+    <version>1.2</version>
+</dependency>
+<dependency>
+    <groupId>taglibs</groupId>
+    <artifactId>standard</artifactId>
+    <version>1.1.2</version>
+</dependency>
+```
+
+EL表达式：  ${ }
+
+- **获取数据**
+- **执行运算**
+- **获取web开发的常用对象**
+
+JSP标签
+
+```jsp
+<%--jsp.include--%>
+<jsp:forward page="jsptag2.jsp">
+<jsp:param name="name" value="zz"/>
+<jsp:param name="age" value="1"/>
+</body>
+</jsp:forward>
+```
+
+**JSTL表达式**
+
+JSTL标签库的使用就是为了弥补HTML标签的不足；它自定义许多标签，可以供我们使用，标签的功能和Java代码一样！
+
+**格式化标签**
+
+**SQL标签**
+
+**XML 标签**
+
+**核心标签** （掌握部分）
+
+![image-20200814104957658](JavaWeb.assets/image-20200814104957658.png)
+
+**JSTL标签库使用步骤**
+
+- 引入对应的 taglib
+- 使用其中的方法
+- **在Tomcat 也需要引入 jstl的包，否则会报错：JSTL解析错误**
+
+**c：if**
+
+```html
+<h4>if测试</h4>
+
+<hr>
+
+<form action="coreif.jsp" method="get">
+    <%--
+    EL表达式获取表单中的数据
+    ${param.参数名}
+    --%>
+    <input type="text" name="username" value="${param.username}">
+    <input type="submit" value="登录">
+</form>
+
+<%--判断如果提交的用户名是管理员，则登录成功--%>
+<c:if test="${param.username=='admin'}" var="isAdmin">
+    <c:out value="管理员欢迎您！"/>
+</c:if>
+
+<%--自闭合标签--%>
+<c:out value="${isAdmin}"/>
+
+```
+
+**c:choose   c:when**
+
+```html
+    <c:set var="score" value="85"/>
+    <c:choose>
+        <c:when test="${score>90}">
+            90
+        </c:when>
+        <c:when test="${score>80}">
+            80
+        </c:when>
+        <c:when test="${score>70}">
+            70
+        </c:when>
+
+    </c:choose>
+```
+
+**c:forEach**
+
+```html
+<%
+
+    ArrayList<String> people = new ArrayList<>();
+    people.add(0,"张三");
+    people.add(1,"李四");
+    people.add(2,"王五");
+    people.add(3,"赵六");
+    people.add(4,"田六");
+    request.setAttribute("list",people);
+%>
+
+
+<%--
+var , 每一次遍历出来的变量
+items, 要遍历的对象
+begin,   哪里开始
+end,     到哪里
+step,   步长
+--%>
+<c:forEach var="people" items="${list}">
+    <c:out value="${people}"/> <br>
+</c:forEach>
+
+<hr>
+
+<c:forEach var="people" items="${list}" begin="1" end="3" step="1" >
+    <c:out value="${people}"/> <br>
+</c:forEach>
+
+```
+
+# 9 JavaBean
+
+实体类
+
+JavaBean有特定的写法：
+
+- 必须要有一个无参构造
+- 属性必须私有化
+- 必须有对应的get/set方法；
+
+一般用来和数据库的字段做映射  ORM；
+
+ORM ：对象关系映射
+
+- 表—>类
+- 字段–>属性
+- 行记录---->对象
+
+| id   | name | age  | address |
+| ---- | ---- | ---- | ------- |
+| 1    | zz1  | 3    | 西安    |
+| 2    | zz2  | 18   | 西安    |
+| 3    | zz3  | 100  | 西安    |
+
+```java
+class People{
+    private int id;
+    private String name;
+    private int age;
+    private String address;
+}
+
+class A{
+    new People(1,"zz1",3，"西安");
+    new People(2,"zz2",18，"西安");
+    new People(3,"zz3",100，"西安");
+}
+```
+
+# 10、MVC三层架构
+
+- 什么是MVC：  Model     view     Controller  模型、视图、控制器
+
+## 10.1 以前的架构
+
+![untitled](JavaWeb.assets/untitled.png)
+
+用户直接访问控制层，控制层就可以直接操作数据库；
+
+```java
+servlet--CRUD-->数据库
+弊端：程序十分臃肿，不利于维护  
+servlet的代码中：处理请求、响应、视图跳转、处理JDBC、处理业务代码、处理逻辑代码
+
+架构：没有什么是加一层解决不了的！
+程序猿调用
+↑
+JDBC （实现该接口）
+↑
+Mysql Oracle SqlServer ....（不同厂商）
+```
+
+## 10.2、MVC三层架构
+
+![untitled](JavaWeb.assets/untitled-1597383124045.png)
+
+Model
+
+- 业务处理 ：业务逻辑（Service）
+- 数据持久层：CRUD   （Dao - 数据持久化对象）
+
+View
+
+- 展示数据
+- 提供链接发起Servlet请求 （a，form，img…）
+
+Controller  （Servlet）
+
+- 收用户的请求 ：（req：请求参数、Session信息….）
+- 交给业务层处理对应的代码
+- 控制视图的跳转
+
+```
+登录--->接收用户的登录请求--->处理用户的请求（获取用户登录的参数，username，password）---->交给业务层处理登录业务（判断用户名密码是否正确：事务）--->Dao层查询用户名和密码是否正确-->数据库
+```
+
+# 11 Filter （重点）
+
+比如 Shiro安全框架技术就是用Filter来实现的
+
+Filter：过滤器 ，用来过滤网站的数据；
+
+- 处理中文乱码
+- 登录验证….
+
+![untitled](JavaWeb.assets/untitled-1597383728323.png)
+
+Filter开发步骤：
+
+1. 导包
+
+2. 编写过滤器
+
+   1. 导包不要错 **（注意）**
+
+      ![image-20200814135814761](JavaWeb.assets/image-20200814135814761.png)
+
+   2. 实现接口，重写对应方法
+
+   ```java
+   public class CharatorEncodingFilter implements Filter {
+       public void init(FilterConfig filterConfig) throws ServletException {
+           System.out.println("init");
+       }
+       // chain 链
+       /*
+       * 1 过滤器中所有的代码，在过滤特定请求的时候都会执行
+       * 2 必须要让过滤器继续通行
+       * */
+       public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+           servletRequest.setCharacterEncoding("utf-8");
+           servletResponse.setCharacterEncoding("utf-8");
+           servletResponse.setContentType("text/html;charset=UTG-8");
+   
+           System.out.println("执行前");
+           filterChain.doFilter(servletRequest, servletResponse);//让请求继续，如果不写就停止了
+           System.out.println("执行后");
+       }
+   
+       public void destroy() {
+           System.out.println("destroy");
+       }
+   }
+   ```
+
+   3. 在xml配置Filter
+
+# 12 监听器
+
+实现一个监听器的接口；（有n种监听器）
+
+1. 编写一个监听器
+
+   实现监听器的接口…
+
+   ```java
+   package com.zz.listener;
+   
+   import javax.servlet.ServletContext;
+   import javax.servlet.http.HttpSessionEvent;
+   import javax.servlet.http.HttpSessionListener;
+   
+   public class OnlineCountListener implements HttpSessionListener {
+   //创建session监听 看你的一举一动
+   //一旦创建session就会触发一次这个事件
+   
+       public void sessionCreated(HttpSessionEvent se) {
+           System.out.println(se.getSession().getId());
+           ServletContext context = se.getSession().getServletContext();
+           Integer onlineCount = (Integer) context.getAttribute("OnlineCount");
+           if(onlineCount==null){
+               onlineCount = new Integer(1);
+           }else{
+               int i = onlineCount.intValue();
+               onlineCount = new Integer(i + 1);
+           }
+   
+           context.setAttribute("OnlineCount",onlineCount);
+       }
+   
+       public void sessionDestroyed(HttpSessionEvent se) {
+           ServletContext context = se.getSession().getServletContext();
+           Integer onlineCount = (Integer) context.getAttribute("OnlineCount");
+           if(onlineCount==null){
+               onlineCount = new Integer(0);
+           }else{
+               int i = onlineCount.intValue();
+               onlineCount = new Integer(i - 1);
+           }
+   
+           context.setAttribute("OnlineCount",onlineCount);
+       }
+   
+           /*
+       Session销毁：
+       1. 手动销毁  getSession().invalidate();
+       2. 自动销毁
+        */
+   }
+   
+   ```
+
+   2. xml注册监听器
+
+      ```xml
+      <listener>
+          <listener-class>com.zz.listener.OnlineCountListener</listener-class>
+      </listener>
+      ```
+
+   3. 看情况是否使用
+
+# 13 过滤器、监听器常见应用
+
+**监听器：GUI编程中经常使用；**
+
+```java
+public class TestPanel {
+    public static void main(String[] args) {
+        Frame frame = new Frame("中秋节快乐");  //新建一个窗体
+        Panel panel = new Panel(null); //面板
+        frame.setLayout(null); //设置窗体的布局
+
+        frame.setBounds(300,300,500,500);
+        frame.setBackground(new Color(0,0,255)); //设置背景颜色
+
+        panel.setBounds(50,50,300,300);
+        panel.setBackground(new Color(0,255,0)); //设置背景颜色
+
+        frame.add(panel);
+
+        frame.setVisible(true);
+
+        //监听事件，监听关闭事件
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+            }
+        });
+
+    }
+}
+```
+
+用户登录之后才能进入主页！用户注销后就不能进入主页了！
+
+1. 用户登录之后，向Sesison中放入用户的数据
+2. 进入主页的时候要判断用户是否已经登录；要求：在过滤器中实现！
+
+```java
+HttpServletRequest request = (HttpServletRequest) servletRequest;
+HttpServletResponse response = (HttpServletResponse) servletResponse;
+
+if (request.getSession().getAttribute("USER_SESSION") == null){
+    response.sendRedirect("/failed.jsp");
+}
+
+filterChain.doFilter(servletRequest, servletResponse);
+```
+
+# 14 JDBC
+
+什么是JDBC ： Java连接数据库！
+
+![untitled](JavaWeb.assets/untitled-1597393274933.png)
+
+需要jar包的支持：
+
+- java.sql
+- javax.sql
+- mysql-conneter-java…  连接驱动（必须要导入）
+
+**实验环境搭建**
+
+```sql
+CREATE TABLE users(
+    id INT PRIMARY KEY,
+    `name` VARCHAR(40),
+    `password` VARCHAR(40),
+    email VARCHAR(60),
+    birthday DATE
+);
+
+INSERT INTO users(id,`name`,`password`,email,birthday)
+VALUES(1,'张三','123456','zs@qq.com','2000-01-01');
+INSERT INTO users(id,`name`,`password`,email,birthday)
+VALUES(2,'李四','123456','ls@qq.com','2000-01-01');
+INSERT INTO users(id,`name`,`password`,email,birthday)
+VALUES(3,'王五','123456','ww@qq.com','2000-01-01');
+```
+
+导入数据库依赖
+
+```xml
+<!--mysql的驱动-->
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>5.1.47</version>
+</dependency>
+```
+
+**JDBC 固定步骤：**
+
+1. 加载驱动
+2. 连接数据库,代表数据库
+3. 向数据库发送SQL的对象Statement : CRUD
+4. 编写SQL （根据业务，不同的SQL）
+5. 执行SQL
+6. 关闭连接（先开的后关）
+
+```java
+public class TestJdbc {
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        //配置信息
+        //useUnicode=true&characterEncoding=utf-8 解决中文乱码
+        String url="jdbc:mysql://localhost:3306/jdbc?useUnicode=true&characterEncoding=utf-8";
+        String username = "root";
+        String password = "123456";
+
+        //1.加载驱动
+        Class.forName("com.mysql.jdbc.Driver");
+        //2.连接数据库,代表数据库
+        Connection connection = DriverManager.getConnection(url, username, password);
+
+        //3.向数据库发送SQL的对象Statement,PreparedStatement : CRUD
+        Statement statement = connection.createStatement();
+
+        //4.编写SQL
+        String sql = "select * from users";
+
+        //5.执行查询SQL，返回一个 ResultSet  ： 结果集
+        ResultSet rs = statement.executeQuery(sql);
+
+        while (rs.next()){
+            System.out.println("id="+rs.getObject("id"));
+            System.out.println("name="+rs.getObject("name"));
+            System.out.println("password="+rs.getObject("password"));
+            System.out.println("email="+rs.getObject("email"));
+            System.out.println("birthday="+rs.getObject("birthday"));
+        }
+
+        //6.关闭连接，释放资源（一定要做） 先开后关
+        rs.close();
+        statement.close();
+        connection.close();
+    }
+}
+
+```
+
+**事务**
+
+要么都成功，要么都失败！
+
+ACID原则：保证数据的安全。
+
+```java
+开启事务
+事务提交  commit()
+事务回滚  rollback()
+关闭事务
+
+转账：
+A:1000
+B:1000
+    
+A(900)   --100-->   B(1100) 
+```
+
+**Junit单元测试**
+
+依赖
+
+```xml
+<!--单元测试-->
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+</dependency>
+```
+
+简单使用
+
+@Test注解只有在方法上有效，只要加了这个注解的方法，就可以直接运行！
+
+```java
+@Test
+public void test(){
+    System.out.println("Hello");
+}
+```
+
+搭建环境
+
+```sql
+CREATE TABLE account(
+   id INT PRIMARY KEY AUTO_INCREMENT,
+   `name` VARCHAR(40),
+   money FLOAT
+);
+
+INSERT INTO account(`name`,money) VALUES('A',1000);
+INSERT INTO account(`name`,money) VALUES('B',1000);
+INSERT INTO account(`name`,money) VALUES('C',1000);
+```
+
