@@ -1,0 +1,14 @@
+package com.zz.dao;
+
+
+import com.zz.pojo.Student;
+
+import java.util.List;
+
+public interface StudentMapper {
+
+
+    //查询所有的学生信息及对应的老师
+    public List<Student> getStudent();
+    public List<Student> getStudent2();
+}

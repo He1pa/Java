@@ -197,7 +197,7 @@ org.apache.ibatis.binding.BindingException: Type interface com.kuang.dao.UserDao
 核心配置文件中注册mapper
 
 ```java
-@Test
+@MyTest
 public void test(){
     //获得SqlSession对象
     SqlSession sqlSession = MybatisUtils.getSession();
@@ -251,7 +251,7 @@ namespace中的包名要和Dao/Mapper接口的包名一致
   3. 测试
 
      ```java
-     @Test
+     @MyTest
      public void test2() {
          SqlSession sqlSession = MybatisUtils.getSqlSession();
          UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -296,7 +296,7 @@ namespace中的包名要和Dao/Mapper接口的包名一致
    ```
 
 3. ```java
-       @Test
+       @MyTest
        public void test3(){
            SqlSession sqlSession = MybatisUtils.getSqlSession();
            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
@@ -696,3 +696,552 @@ id   name   password
    logger.debug("debug:进入了testLog4j");
    logger.error("error:进入了testLog4j");
    ```
+
+# 7 分页
+
+   **思考：为什么要分页？**
+
+   - 减少数据的处理量
+
+   ## 7.1 使用Limit分页
+
+   ```sql
+   语法：SELECT * from user limit startIndex,pageSize;
+   SELECT * from user limit 3;  #[0,n]
+   ```
+
+   使用Mybatis实现分页，核心SQL
+
+   1. 接口
+
+      ```java
+      //分页
+      List<User> getUserByLimit(Map<String,Integer> map);
+      12
+      ```
+
+   2. Mapper.xml
+
+      ```xml
+      <!--//分页-->
+      <select id="getUserByLimit" parameterType="map" resultMap="UserMap">
+          select * from  mybatis.user limit #{startIndex},#{pageSize}
+      </select>
+      ```
+      
+   3. 测试
+
+      ```java
+      @MyTest
+      public void getUserByLimit(){
+      SqlSession sqlSession = MybatisUtils.getSqlSession();
+      UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+      
+      HashMap<String, Integer> map = new HashMap<String, Integer>();
+          map.put("startIndex",1);
+          map.put("pageSize",2);
+      
+          List<User> userList =  mapper.getUserByLimit(map);
+          for (User user : userList) {
+          System.out.println(user);
+          }
+      
+          sqlSession.close();
+          }
+      ```
+
+### 7.2、RowBounds分页
+
+不再使用SQL实现分页
+
+1. 接口
+
+   ```java
+   //分页2
+   List<User> getUserByRowBounds();
+   ```
+
+2. mapper.xml
+
+   ```xml
+   <!--分页2-->
+   <select id="getUserByRowBounds" resultMap="UserMap">
+       select * from  mybatis.user
+   </select>
+   ```
+
+3. 测试
+
+   ```java
+   @MyTest
+   public void getUserByRowBounds(){
+   SqlSession sqlSession = MybatisUtils.getSqlSession();
+   
+   //RowBounds实现
+   RowBounds rowBounds = new RowBounds(1, 2);
+   
+   //通过Java代码层面实现分页
+   List<User> userList = sqlSession.selectList("com.kuang.dao.UserMapper.getUserByRowBounds",null,rowBounds);
+   
+       for (User user : userList) {
+       System.out.println(user);
+       }
+   
+       sqlSession.close();
+       }
+   ```
+
+### 7.3 分页插件
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200706082257138.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDYzNTE5OA==,size_16,color_FFFFFF,t_70#pic_center)
+
+# 8 使用注解开发
+
+## 8.1 面向接口编程
+
+\- 大家之前都学过面向对象编程，也学习过接口，但在真正的开发中，很多时候我们会选择面向接口编程
+ \- **根本原因 :  解耦 , 可拓展 , 提高复用 , 分层开发中 , 上层不用管具体的实现 , 大家都遵守共同的标准 , 使得开发变得容易 , 规范性更好**
+ \- 在一个面向对象的系统中，系统的各种功能是由许许多多的不同对象协作完成的。在这种情况下，各个对象内部是如何实现自己的,对系统设计人员来讲就不那么重要了；
+ \- 而各个对象之间的协作关系则成为系统设计的关键。小到不同类之间的通信，大到各模块之间的交互，在系统设计之初都是要着重考虑的，这也是系统设计的主要工作内容。面向接口编程就是指按照这种思想来编程。
+
+**关于接口的理解**
+
+\- 接口从更深层次的理解，应是定义（规范，约束）与实现（名实分离的原则）的分离。
+ \- 接口的本身反映了系统设计人员对系统的抽象理解。
+ \- 接口应有两类：
+ \- 第一类是对一个个体的抽象，它可对应为一个抽象体(abstract class)；
+ \- 第二类是对一个个体某一方面的抽象，即形成一个抽象面（interface）；
+ \- 一个体有可能有多个抽象面。抽象体与抽象面是有区别的。
+
+**三个面向区别**
+
+\- 面向对象是指，我们考虑问题时，以对象为单位，考虑它的属性及方法 .
+ \- 面向过程是指，我们考虑问题时，以一个具体的流程（事务过程）为单位，考虑它的实现 .
+ \- 接口设计与非接口设计是针对复用技术而言的，与面向对象（过程）不是一个问题.更多的体现就是对系统整体的架构
+
+## 8.2 使用注解开发
+
+1. 注解在接口上实现
+
+   ```java
+   @Select("select * from user")
+   List<User> getUsers();
+   12
+   ```
+
+2. 需要再核心配置文件中绑定接口！
+
+   ```xml
+   <!--绑定接口-->
+   <mappers>
+       <mapper class="com.kuang.dao.UserMapper"/>
+   </mappers>
+   1234
+   ```
+
+3. 测试
+
+本质：反射机制实现
+
+底层：动态代理！
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200706082347652.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDYzNTE5OA==,size_16,color_FFFFFF,t_70#pic_center)
+
+**Mybatis详细的执行流程！**
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/20200706082410595.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDYzNTE5OA==,size_16,color_FFFFFF,t_70#pic_center)
+
+## 8.3、CRUD
+
+我们可以在工具类创建的时候实现自动提交事务！
+
+```java
+public static SqlSession  getSqlSession(){
+    return sqlSessionFactory.openSession(true);
+}
+```
+
+编写接口，增加注解
+
+```java
+    @Select("select * from user")
+    List<User> getUsers();
+
+    //方法存在多个参数，所有参数前面加@Param
+    @Select("select * from user where id = #{id}")
+    User getUserById(@Param("id") int id,@Param("name") String name);
+
+
+    @Insert("insert into user(id,name,pwd) value (#{id},#{name},#{password})")
+    int addUser(User user);
+
+    @Update("update user set name=#{name},pwd=#{password} where id=#{id}")
+    int updateUser(User user);
+
+    @Delete("delete from user where id=#{id}")
+    int deleteUser(int id);
+```
+
+测试类
+
+【注意：我们必须要讲接口注册绑定到我们的核心配置文件中！】
+
+**关于@Param() 注解**
+
+- 基本类型的参数或者String类型，需要加上
+- 引用类型不需要加
+- 如果只有一个基本类型的话，可以忽略，但是建议大家都加上！
+- 我们在SQL中引用的就是我们这里的 @Param() 中设定的属性名！
+
+**#{}     ${} 区别**
+
+# 9 Lombok
+
+Project Lombok is a java library that automatically plugs into your editor and build tools, spicing up your java.
+Never write another getter or equals method again, with one annotation your class has a fully featured builder, Automate your logging variables, and much more.
+
+- java library
+- plugs
+- build tools
+- with one annotation your class
+
+使用步骤：
+
+1. 在IDEA中安装Lombok插件！
+2. 在项目中导入lombok的jar包
+
+```xml
+<dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <version>1.18.10</version>
+</dependency>
+```
+
+3. 在实体类上加注解即可！
+
+```java
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+ @Getter and @Setter
+ @FieldNameConstants
+ @ToString
+ @EqualsAndHashCode
+ @AllArgsConstructor, @RequiredArgsConstructor and @NoArgsConstructor
+ @Log, @Log4j, @Log4j2, @Slf4j, @XSlf4j, @CommonsLog, @JBossLog, @Flogger
+ @Data
+ @Builder
+ @Singular
+ @Delegate
+ @Value
+ @Accessors
+ @Wither
+ @SneakyThrows
+```
+
+```java
+@Data：无参构造，get、set、tostring、hashcode，equals
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@ToString
+@Getter
+```
+
+# 10 多对一处理
+
+多对一：
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20200706082446229.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDYzNTE5OA==,size_16,color_FFFFFF,t_70#pic_center)
+
+- 多个学生，对应一个老师
+- 对于学生这边而言，  **关联** …  多个学生，关联一个老师  【多对一】
+- 对于老师而言， **集合** ， 一个老师，有很多学生 【一对多】
+
+![untitled](Mybatis.assets/untitled.png)
+
+SQL：
+
+```sql
+CREATE TABLE `teacher` (
+  `id` INT(10) NOT NULL,
+  `name` VARCHAR(30) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+INSERT INTO teacher(`id`, `name`) VALUES (1, '秦老师'); 
+
+CREATE TABLE `student` (
+  `id` INT(10) NOT NULL,
+  `name` VARCHAR(30) DEFAULT NULL,
+  `tid` INT(10) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fktid` (`tid`),
+  CONSTRAINT `fktid` FOREIGN KEY (`tid`) REFERENCES `teacher` (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('1', '小明', '1'); 
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('2', '小红', '1'); 
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('3', '小张', '1'); 
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('4', '小李', '1'); 
+INSERT INTO `student` (`id`, `name`, `tid`) VALUES ('5', '小王', '1');
+
+```
+
+## 10.1 测试环境搭建
+
+1. 导入lombok
+2. 新建实体类 Teacher，Student
+3. 建立Mapper接口
+4. 建立Mapper.XML文件
+5. 在核心配置文件中绑定注册我们的Mapper接口或者文件！【方式很多，随心选】
+6. 测试查询是否能够成功！
+
+## 10.2 按照查询嵌套处理
+
+```xml
+<!--
+    思路:
+        1. 查询所有的学生信息
+        2. 根据查询出来的学生的tid，寻找对应的老师！  子查询
+    -->
+
+<select id="getStudent" resultMap="StudentTeacher">
+    select * from student
+</select>
+
+<resultMap id="StudentTeacher" type="Student">
+    <result property="id" column="id"/>
+    <result property="name" column="name"/>
+    <!--复杂的属性，我们需要单独处理 对象： association 集合： collection -->
+    <association property="teacher" column="tid" javaType="Teacher" select="getTeacher"/>
+</resultMap>
+
+<select id="getTeacher" resultType="Teacher">
+    select * from teacher where id = #{id}
+</select>
+```
+
+## 10.2 按照结果嵌套处理
+
+```xml
+	<select id="getStudent2" resultMap="StudentTeacher2">
+        select s.id sid,s.name sname,t.name tname
+        from mybatis.student s, mybatis.teacher t
+        where  s.tid = t.id;
+	</select>
+    
+    <resultMap id="StudentTeacher2" type="Student">
+        <result property="id" column="sid"/>
+        <result property="name" column="sname"/>
+        <association property="teacher" javaType="Teacher">
+            <result property="name" column="tname"/>
+        </association>
+    </resultMap>
+```
+
+回顾Mysql 多对一查询方式：
+
+- 子查询
+- 联表查询
+
+# 11 一对多处理
+
+比如：一个老师拥有多个学生！
+
+对于老师而言，就是一对多的关系!
+
+## 环境搭建
+
+1. 环境搭建
+
+```java
+@Data
+public class Teacher {
+    private int id;
+    private String name;
+    private List<Student> studentList;
+
+}
+
+```
+
+```java
+@Data
+public class Student {
+    private int id;
+    private String name;
+    private int tid;
+}
+
+```
+
+## 按照结果嵌套处理
+
+```xml
+   <select id="getTeacher" resultMap="TeacherStudent">
+        select s.id sid,s.name sname,t.name tname,t.id tid
+        from mybatis.student s,mybatis.teacher t
+        where s.tid = t.id and t.id = #{tid}
+    </select>
+
+    <resultMap id="TeacherStudent" type="Teacher">
+        <result property="id" column="tid"/>
+        <result property="name" column="tname"/>
+        <!--复杂的属性，我们需要单独处理 对象： association 集合： collection
+javaType="" 指定属性的类型！
+集合中的泛型信息，我们使用ofType获取
+-->
+        <collection property="studentList" ofType="Student">
+            <result property="id" column="sid"/>
+            <result property="name" column="sname"/>
+            <result property="tid" column="tid"/>
+        </collection>
+        
+    </resultMap>
+```
+
+## 按查询嵌套处理
+
+```xml
+    <select id="getTeacher2" resultMap="TeacherStudent2">
+        select * from mybatis.teacher where id=#{tid}
+    </select>
+    <resultMap id="TeacherStudent2" type="Teacher">
+        <collection property="studentList" javaType="ArrayList" ofType="Student" select="getStudentByTeacherId" column="id"/>
+    </resultMap>
+    
+    <select id="getStudentByTeacherId" resultType="Student">
+        select * from mybatis.student where tid=#{tid}
+    </select>
+```
+
+## 小结
+
+1. 关联 - association   【多对一】
+2. 集合 - collection   【一对多】
+3. javaType    &   ofType
+   1. JavaType  用来指定实体类中属性的类型
+   2. ofType  用来指定映射到List或者集合中的 pojo类型，泛型中的约束类型！
+
+注意点：
+
+- 保证SQL的可读性，尽量保证通俗易懂
+- 注意一对多和多对一中，属性名和字段的问题！
+- 如果问题不好排查错误，可以使用日志 ， 建议使用 Log4j
+
+**慢SQL       1s        1000s**
+
+面试高频
+
+- Mysql引擎
+- InnoDB底层原理
+- 索引
+- 索引优化！
+
+# 12 动态 SQL
+
+**什么是动态SQL：动态SQL就是指根据不同的条件生成不同的SQL语句**
+
+利用动态 SQL 这一特性可以彻底摆脱这种痛苦。
+
+```xml
+动态 SQL 元素和 JSTL 或基于类似 XML 的文本处理器相似。在 MyBatis 之前的版本中，有很多元素需要花时间了解。MyBatis 3 大大精简了元素种类，现在只需学习原来一半的元素便可。MyBatis 采用功能强大的基于 OGNL 的表达式来淘汰其它大部分元素。
+
+if
+choose (when, otherwise)
+trim (where, set)
+foreach
+```
+
+## 搭建环境
+
+```sql
+CREATE TABLE `blog` (
+  `id` varchar(50) NOT NULL COMMENT '博客id',
+  `title` varchar(100) NOT NULL COMMENT '博客标题',
+  `author` varchar(30) NOT NULL COMMENT '博客作者',
+  `create_time` datetime NOT NULL COMMENT '创建时间',
+  `views` int(30) NOT NULL COMMENT '浏览量'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+```
+
+创建一个基础工程
+
+1. 导包
+2. 编写配置文件
+3. 编写实体类
+
+```java
+@Data
+public class Blog {
+    private int id;
+    private String title;
+    private String author;
+    private Date createTime;
+    private int views;
+}
+```
+
+4. 编写实体类对应Mapper接口 和 Mapper.XML文件
+
+IdUtils（UUID类）
+
+```java
+public class IdUtils {
+    public static String getId(){
+        return UUID.randomUUID().toString().replaceAll("-","");
+    }
+
+    @Test
+    public  void test(){
+        System.out.println(IdUtils.getId());
+    }
+}
+
+```
+
+mapper
+
+```xml
+    <insert id="addBlog" parameterType="Blog">
+        insert into mybatis.blog (id, title, author, create_time, views) VALUES
+        (#{id}, #{title}, #{author}, #{createTime}, #{views})
+    </insert>
+
+```
+
+test
+
+```java
+    @Test
+    public void addInitBlog(){
+        SqlSession session = MybatisUtils.getSession();
+        BlogMapper mapper = session.getMapper(BlogMapper.class);
+        Blog blog = new Blog();
+        blog.setId(IdUtils.getId());
+        blog.setTitle("Mybatis");
+        blog.setAuthor("狂神说");
+        blog.setCreateTime(new Date());
+        blog.setViews(9999);
+
+        mapper.addBlog(blog);
+
+        blog.setId(IdUtils.getId());
+        blog.setTitle("Java");
+        mapper.addBlog(blog);
+
+        blog.setId(IdUtils.getId());
+        blog.setTitle("Spring");
+        mapper.addBlog(blog);
+
+        blog.setId(IdUtils.getId());
+        blog.setTitle("微服务");
+        mapper.addBlog(blog);
+
+        session.close();
+    }
+```
+
+**IF**
+
