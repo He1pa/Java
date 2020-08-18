@@ -42,12 +42,15 @@ public class MyTest {
     public void queryBlogIfTest(){
         SqlSession session = MybatisUtils.getSession();
         BlogMapper mapper = session.getMapper(BlogMapper.class);
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("title","Mybatis");
+        HashMap map = new HashMap();
+        map.put("title","Java");
+        //map.put("id","94f6696bb81445c782dce52254dd7fcc");
+      //  map.put("views",9999);
 
         List<Blog> blogs = mapper.queryBlogIf(map);
         for (Blog blog : blogs) {
             System.out.println(blog);
         }
+        session.close();
     }
 }

@@ -35,19 +35,15 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mybatis-08/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mybatis-09/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Java\Mybatis\mybatis-08\src\main\resources" />
-      <recent name="D:\Java\Mybatis\mybatis-07\src\main\java" />
-      <recent name="D:\Java\Mybatis\mybatis-07\src\main\resources\com\zz\dao" />
-      <recent name="D:\Java\Mybatis\mybatis-07\src\main\resources" />
-      <recent name="D:\Java\Mybatis\mybatis-06\src\main\java\zz\dao" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Java\Mybatis\mybatis-06\src\main\resources\com\zz\dao" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zz.utils" />
@@ -56,11 +52,23 @@
       <recent name="com.zz.pojo.utils" />
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Java\Mybatis\mybatis-06\src\main\resources\com\zz\dao" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\Mybatis\mybatis-09\src\main\resources" />
+      <recent name="D:\Java\Mybatis\mybatis-08\src\main\resources" />
+      <recent name="D:\Java\Mybatis\mybatis-07\src\main\java" />
+      <recent name="D:\Java\Mybatis\mybatis-07\src\main\resources\com\zz\dao" />
+      <recent name="D:\Java\Mybatis\mybatis-07\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MyTest.queryBlogIfTest">
+  <component name="RunManager" selected="JUnit.MyTest.test">
+    <configuration name="All in mybatis-09" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-09" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="IdUtils.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="mybatis-08" />
       <extension name="coverage">
@@ -97,21 +105,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MyTest.test01 (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-07" />
+    <configuration name="MyTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="mybatis-09" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="METHOD_NAME" value="test01" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyTest.test03" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="mybatis-06" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <option name="METHOD_NAME" value="test03" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MyTest.test" />
+        <item itemvalue="JUnit.All in mybatis-09" />
         <item itemvalue="JUnit.MyTest.queryBlogIfTest" />
         <item itemvalue="JUnit.MyTest.addInitBlog" />
         <item itemvalue="JUnit.IdUtils.test" />
-        <item itemvalue="JUnit.MyTest.test01 (1)" />
-        <item itemvalue="JUnit.MyTest.test03" />
       </list>
     </recent_temporary>
   </component>
@@ -147,6 +145,10 @@
       <workItem from="1597653978469" duration="6120000" />
       <workItem from="1597662253677" duration="4502000" />
       <workItem from="1597667092680" duration="2727000" />
+      <workItem from="1597731008537" duration="681000" />
+      <workItem from="1597732237058" duration="492000" />
+      <workItem from="1597750409469" duration="2411000" />
+      <workItem from="1597753378925" duration="2849000" />
     </task>
     <servers />
   </component>
@@ -194,22 +196,22 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="3618" y="715" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597639855927" />
-    <state width="2517" height="361" key="GridCell.Tab.0.bottom" timestamp="1597670007215">
+    <state width="1385" height="313" key="GridCell.Tab.0.bottom" timestamp="1597756230083">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="361" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597670007215" />
-    <state width="2517" height="361" key="GridCell.Tab.0.center" timestamp="1597670007215">
+    <state width="1385" height="313" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597756230083" />
+    <state width="1385" height="313" key="GridCell.Tab.0.center" timestamp="1597756230083">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="361" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597670007215" />
-    <state width="2517" height="361" key="GridCell.Tab.0.left" timestamp="1597670007215">
+    <state width="1385" height="313" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597756230083" />
+    <state width="1385" height="313" key="GridCell.Tab.0.left" timestamp="1597756230083">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="361" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597670007215" />
-    <state width="2517" height="361" key="GridCell.Tab.0.right" timestamp="1597670007215">
+    <state width="1385" height="313" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597756230083" />
+    <state width="1385" height="313" key="GridCell.Tab.0.right" timestamp="1597756230083">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="361" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597670007215" />
+    <state width="1385" height="313" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597756230083" />
     <state x="2601" y="364" width="1164" height="711" key="SettingsEditor" timestamp="1597649069096">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
@@ -222,14 +224,14 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="3099" y="574" width="202" height="275" key="com.intellij.database.actions.DdlActions$ModifyObject$1/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597562715833" />
-    <state x="3213" y="549" key="new project wizard" timestamp="1597666203020">
+    <state x="3213" y="549" key="new project wizard" timestamp="1597752842550">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3213" y="549" key="new project wizard/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597666203020" />
-    <state x="3474" y="311" width="672" height="678" key="search.everywhere.popup" timestamp="1597667163730">
+    <state x="3213" y="549" key="new project wizard/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597752842550" />
+    <state x="3474" y="311" width="672" height="678" key="search.everywhere.popup" timestamp="1597754506779">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3474" y="311" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597667163730" />
+    <state x="3474" y="311" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597754506779" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
