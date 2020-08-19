@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--使用Spring来创建对象，在Spring这些都称为Bean
+    bean = 对象  new Hello（）;
+    类型 变量名 = new 类型（）；
+    Hello hello = new Hello();
+    id= 变量名
+    class = new的对象
+    property 相当于给对象中的属性设置值
+
+-->
+<!--    第一种方式，通过下标赋值-->
+<!--    <bean id="user" class="com.zz.pojo.User">-->
+<!--        <constructor-arg index="0" value="zzz"/>-->
+<!--    </bean>-->
+<!--    第二种方式，通过类型创建-->
+<!--    <bean id="user" class="com.zz.pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="zzz"/>-->
+<!--    </bean>-->
+<!--    第三种，直接通过参数名-->
+<!--        <bean id="user" class="com.zz.pojo.User">-->
+<!--            <constructor-arg name="name" value="zz"/>-->
+<!--        </bean>-->
+
+
+<!--    别名-->
+<!--        <alias name="user" alias="zzzzzzz"/>-->
+    <!--bean就是java对象,由Spring创建和管理-->
+
+    <!--
+       id : bean的标识符,要唯一,如果没有配置id,name就是默认标识符
+       如果配置id,又配置了name,那么name是别名
+       name可以设置多个别名,可以用逗号,分号,空格隔开
+       如果不配置id和name,可以根据applicationContext.getBean(.class)获取对象;
+
+       class : bean的全限定名=包名+类名
+    -->
+
+    <bean id="hello" name="hello2 h2,h3;h4" class="com.zz.pojo.User">
+        <property name="name" value="Spring"/>
+    </bean>
+</beans>

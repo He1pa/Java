@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--使用Spring来创建对象，在Spring这些都称为Bean
+    bean = 对象  new Hello（）;
+    类型 变量名 = new 类型（）；
+    Hello hello = new Hello();
+    id= 变量名
+    class = new的对象
+    property 相当于给对象中的属性设置值
+
+-->
+
+    <bean id="address" class="com.zz.pojo.Address">
+        <property name="address" value="china"/>
+    </bean>
+    <bean id="student"  class="com.zz.pojo.Student">
+<!--        第一种 普通值注入，直接用value-->
+        <property name="name" value="z中z"/>
+<!--        第二种，beann注入  ref-->
+        <property name="address" ref="address"/>
+<!--        第三种，数组注入  ref-->
+        <property name="books">
+            <array>
+                <value>红楼梦</value>
+                <value>西游记</value>
+                <value>三国演义</value>
+            </array>
+        </property>
+<!--        List-->
+        <property name="hobbies">
+            <list>
+                <value>抽烟</value>
+                <value>喝酒</value>
+                <value>烫头</value>
+            </list>
+        </property>
+<!--        map-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="1231231"></entry>
+                <entry key="银行卡" value="123123"></entry>
+            </map>
+        </property>
+
+        <property name="games">
+            <set>
+                <value>LOL1</value>
+                <value>LOL2</value>
+                <value>LOL3</value>
+            </set>
+        </property>
+
+        <property name="wife">
+            <null></null>
+        </property>
+
+        <property name="info">
+            <props>
+                <prop key="driver">2019</prop>
+                <prop key="url">zz</prop>
+                <prop key="username">男</prop>
+                <prop key="password">男</prop>
+            </props>
+
+        </property>
+
+
+    </bean>
+</beans>
