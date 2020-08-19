@@ -25,13 +25,11 @@ JavaScript
 
 JavaWeb
 
-
+MyBatis
 
 ## 目前进度
 
-MyBatis
-
-
+Spring
 
 ## 计划
 
@@ -41,6 +39,6 @@ MyBatis
 
 VUE
 
-Spring SpringMVC  Springboot 
+ SpringMVC  Springboot 
 
 
