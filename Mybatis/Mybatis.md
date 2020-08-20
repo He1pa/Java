@@ -255,7 +255,7 @@ namespace中的包名要和Dao/Mapper接口的包名一致
      public void test2() {
          SqlSession sqlSession = MybatisUtils.getSqlSession();
          UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-         User user  = new User(3,"黑子","666");
+         User user  = new User(3,"zz","666");
          mapper.addUser(user);
          //增删改一定要提交事务
          sqlSession.commit();
@@ -302,7 +302,7 @@ namespace中的包名要和Dao/Mapper接口的包名一致
            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
            HashMap<String, Object> map = new HashMap<String, Object>();
            map.put("userid",4);
-           map.put("username","王虎");
+           map.put("username","zzz");
            map.put("userpassword",789);
            mapper.addUser2(map);
            //提交事务
@@ -320,7 +320,7 @@ namespace中的包名要和Dao/Mapper接口的包名一致
 >
 > 多个参数用Map , **或者注解！**
 
-## 7. 模糊查询
+## 3.7  模糊查询
 
 1. Java代码执行的时候，传递通配符 % %
 
@@ -518,7 +518,7 @@ MapperRegistry：注册绑定我们的Mapper文件；
 
 这里面的每一个Mapper，就代表一个具体的业务！5、解决属性名和字段名不一致的问题
 
-# 5、解决属性名和字段名不一致的问题
+# 5 解决属性名和字段名不一致的问题
 
 ## 5.1  问题
 
@@ -585,7 +585,7 @@ id   name   password
 - ResultMap 的设计思想是，对于简单的语句根本不需要配置显式的结果映射，而对于复杂一点的语句只需要描述它们的关系就行了。
 - `ResultMap` 最优秀的地方在于，虽然你已经对它相当了解了，但是根本就不需要显式地用到他们。
 
-# 6、日志
+# 6 日志
 
 ## 6.1 日志工厂
 
