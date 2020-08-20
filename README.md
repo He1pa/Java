@@ -27,9 +27,11 @@ JavaWeb
 
 MyBatis
 
+Spring
+
 ## 目前进度
 
-Spring
+ SpringMVC
 
 ## 计划
 
@@ -39,6 +41,6 @@ Spring
 
 VUE
 
- SpringMVC  Springboot 
+  Springboot 
 
 
