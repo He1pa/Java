@@ -30,61 +30,72 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-06-anno/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-11-transaction/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.file-colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.zz.config" />
+      <recent name="com.zz.mapper" />
       <recent name="com.zz.pojo" />
+      <recent name="com.zz.demo04" />
+      <recent name="com.zz.config" />
       <recent name="com.zz.dao" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\Spring\spring-11-transaction\src\main\resources" />
+      <recent name="D:\Java\Spring\spring-11-transaction\src\main\java\com\zz\mapper" />
+      <recent name="D:\Java\Spring\spring-08-proxy\src\main\java\com\zz\demo03" />
       <recent name="D:\Java\Spring\spring-06-anno\src\main\resources" />
       <recent name="D:\Java\Spring\spring-05-Autowired\src\main\resources" />
-      <recent name="D:\Java\Spring\spring-04-di\src\main\resources" />
-      <recent name="D:\Java\Spring\spring-03-ioc2\src\main\resources" />
-      <recent name="D:\Java\Spring\spring-01-ioc\src\main\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MyTest">
+    <configuration name="Client (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zz.demo04.Client" />
+      <module name="spring-08-proxy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zz.demo04.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyTest (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <module name="spring-06-anno" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyTest (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <module name="spring-04-di" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyTest (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <module name="spring-05-Autowired" />
+      <module name="spring-09-aop" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="MyTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MyTest" />
-      <module name="spring-07-appconfig" />
+      <module name="spring-11-transaction" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-10-mybatis" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MyTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="MyTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-04-di" />
+      <module name="spring-10-mybatis" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MyTest" />
       <option name="METHOD_NAME" value="test" />
@@ -96,10 +107,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.MyTest" />
-        <item itemvalue="Application.MyTest (1)" />
-        <item itemvalue="Application.MyTest (4)" />
         <item itemvalue="JUnit.MyTest.test" />
-        <item itemvalue="Application.MyTest (3)" />
+        <item itemvalue="JUnit.MyTest" />
+        <item itemvalue="Application.MyTest (1)" />
+        <item itemvalue="Application.Client (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -113,7 +124,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597811860522</updated>
-      <workItem from="1597811862225" duration="19899000" />
+      <workItem from="1597811862225" duration="20559000" />
+      <workItem from="1597899904767" duration="21576000" />
     </task>
     <servers />
   </component>
@@ -129,34 +141,42 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="3733" y="508" key="#Notifications/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597831580647" />
-    <state x="3296" y="359" key="#Project_Structure" timestamp="1597840023578">
+    <state x="3296" y="359" key="#Project_Structure" timestamp="1597922019286">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3296" y="359" key="#Project_Structure/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597840023578" />
+    <state x="3296" y="359" key="#Project_Structure/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597922019286" />
+    <state x="3402" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597911136711">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3402" y="382" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597911136711" />
     <state x="3316" y="490" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597812183738">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="3316" y="490" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597812183738" />
-    <state x="3688" y="425" key="#com.intellij.ide.util.MemberChooser" timestamp="1597838749985">
+    <state x="3688" y="425" key="#com.intellij.ide.util.MemberChooser" timestamp="1597923585541">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3688" y="425" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597838749985" />
-    <state width="1232" height="331" key="GridCell.Tab.0.bottom" timestamp="1597839183928">
+    <state x="3688" y="425" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597923585541" />
+    <state x="3748" y="576" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1597922526311">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="1232" height="331" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597839183928" />
-    <state width="1232" height="331" key="GridCell.Tab.0.center" timestamp="1597839183928">
+    <state x="3748" y="576" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597922526311" />
+    <state width="1232" height="304" key="GridCell.Tab.0.bottom" timestamp="1597926870672">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="1232" height="331" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597839183928" />
-    <state width="1232" height="331" key="GridCell.Tab.0.left" timestamp="1597839183927">
+    <state width="1232" height="304" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597926870672" />
+    <state width="1232" height="304" key="GridCell.Tab.0.center" timestamp="1597926870672">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="1232" height="331" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597839183927" />
-    <state width="1232" height="331" key="GridCell.Tab.0.right" timestamp="1597839183928">
+    <state width="1232" height="304" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597926870672" />
+    <state width="1232" height="304" key="GridCell.Tab.0.left" timestamp="1597926870672">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state width="1232" height="331" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597839183928" />
+    <state width="1232" height="304" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597926870672" />
+    <state width="1232" height="304" key="GridCell.Tab.0.right" timestamp="1597926870672">
+      <screen x="1920" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1232" height="304" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597926870672" />
     <state x="3383" y="327" key="Maven.ArtifactSearchDialog" timestamp="1597827201820">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
@@ -165,13 +185,13 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="2159" y="508" width="998" height="708" key="SettingsEditor/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597841311372" />
-    <state x="3167" y="399" key="new project wizard" timestamp="1597838691886">
+    <state x="3167" y="399" key="new project wizard" timestamp="1597921957524">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3167" y="399" key="new project wizard/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597838691886" />
-    <state x="3516" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1597840099490">
+    <state x="3167" y="399" key="new project wizard/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597921957524" />
+    <state x="3516" y="314" width="672" height="678" key="search.everywhere.popup" timestamp="1597923866652">
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
-    <state x="3516" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597840099490" />
+    <state x="3516" y="314" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1597923866652" />
   </component>
 </project>
