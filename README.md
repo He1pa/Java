@@ -25,17 +25,17 @@ MyBatis
 
 Spring
 
+ SpringMVC
+
 ## 目前进度
 
- SpringMVC
+VUE
 
 ## 计划
 
 多线程
 
 设计模式
-
-VUE
 
   Springboot 
 
