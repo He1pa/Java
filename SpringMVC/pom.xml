@@ -14,6 +14,9 @@
         <module>springmvc-03-anno</module>
         <module>springmvc-04-controller</module>
         <module>springmvc-05-json</module>
+        <module>springmvc-06-ajax</module>
+        <module>springmvc-07-intercepter</module>
+        <module>springmvc-08-file</module>
     </modules>
     <dependencies>
         <dependency>
@@ -40,6 +43,11 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
         </dependency>
     </dependencies>
     <!--在build中配置resources，来防止资源导出失败的问题-->
