@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <li v-for="item in items">
+        {{item.message}}
+    </li>
+</div>
+<!--    导入vue.js-->
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script>
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            items:[
+                {message:'zz1'},
+                {message:'zz2'},
+                {message:'zz3'}
+            ]
+        }
+
+    });
+</script>
+</body>
+</html>

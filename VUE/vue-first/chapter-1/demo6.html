@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+<zz v-for="item in items" v-bind:z="item"></zz>
+</div>
+<!--    导入vue.js-->
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script>
+    Vue.component("zz",{
+        props:['z'],
+        template:'<li>{{z}}</li>'
+    });
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            items:["Java","Linux","前端"]
+        }
+    });
+</script>
+</body>
+</html>
