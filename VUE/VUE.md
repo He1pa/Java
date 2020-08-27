@@ -933,7 +933,7 @@ WebPack 是一款**模块加载器兼打包工具**，它能把各种资源，�
 ```powershell
 npm install webpack -g
 npm install webpack-cli -g
-12
+
 ```
 
 测试安装成功: 输入以下命令有版本号输出即为安装成功
@@ -941,7 +941,7 @@ npm install webpack-cli -g
 ```powershell
 webpack -v
 webpack-cli -v
-12
+
 ```
 
 什么是Webpack
@@ -1190,7 +1190,7 @@ App.vue
     <router-link to="/main">首页</router-link>
     <router-link to="/content">内容页</router-link>
     <router-link to="/test">测试页</router-link>
-    <!—这个标签就是用来展示视图-->
+    <!--这个标签就是用来展示视图-->
     <router-view></router-view>
   </div>
 </template>
